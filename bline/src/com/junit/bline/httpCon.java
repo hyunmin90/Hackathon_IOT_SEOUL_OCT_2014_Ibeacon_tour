@@ -16,17 +16,17 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
-public class httpCon extends Thread implements Runnable
+public class httpCon<T extends defaultHandler> extends Thread implements Runnable
 {
 	String UUID;
-	MainActivity requsetActivity;
-	ResultHandler mHandler;
+	T requsetActivity;
+	ResultHandler<T> mHandler;
 	
-	public httpCon(String uuid, MainActivity mainActivity)
+	public httpCon(String uuid, T mainActivity)
 	{
 		UUID = uuid;
 		requsetActivity = mainActivity;
-		mHandler = new ResultHandler(requsetActivity);//핸들러 사용을 위한 선언
+		mHandler = new ResultHandler<T>(requsetActivity);//핸들러 사용을 위한 선언
 	}
 
 	public void run()
@@ -80,14 +80,14 @@ public class httpCon extends Thread implements Runnable
 		}
 	}
 	
-	static class ResultHandler extends Handler {
-	    private final WeakReference<MainActivity> mActivity;
-	    ResultHandler(MainActivity activity) {
-	        mActivity = new WeakReference<MainActivity>(activity);
+	static class ResultHandler<T extends defaultHandler> extends Handler {
+	    private final WeakReference<T> mActivity;
+	    ResultHandler(T activity) {
+	        mActivity = new WeakReference<T>(activity);
 	    }
 		@Override
 		public void handleMessage(Message msg) {
-			MainActivity activity = mActivity.get();
+			T activity = mActivity.get();
 	        if(activity != null) {
 				activity.handleMessage(msg);
 			}

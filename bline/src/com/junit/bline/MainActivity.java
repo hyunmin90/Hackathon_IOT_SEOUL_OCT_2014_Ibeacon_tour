@@ -20,7 +20,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
-public class MainActivity extends Activity implements OnClickListener {
+public class MainActivity extends Activity implements OnClickListener, defaultHandler {
 	
 	// Debugging
 	private static final String TAG = "Main";
@@ -75,7 +75,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		UUID = (EditText)findViewById(R.id.UUID);
 		String uuid = UUID.getText().toString();
 		Log.i("uuid 값 : ", uuid);
-		httpCon thread = new httpCon(uuid, MainActivity.this);
+		
+		httpCon<MainActivity> thread = new httpCon<MainActivity>(uuid, MainActivity.this);
 		thread.start();
 	}
 	
@@ -95,7 +96,6 @@ public class MainActivity extends Activity implements OnClickListener {
             break;
         }
 	}
-	
 	
 	public void handleMessage(Message msg)
 	{
