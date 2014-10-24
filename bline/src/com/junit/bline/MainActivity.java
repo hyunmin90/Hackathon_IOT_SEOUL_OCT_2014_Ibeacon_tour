@@ -5,10 +5,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import com.junit.bline.R;
-import com.junit.bline.httpCon;
+import com.junit.http.defaultHandler;
+import com.junit.http.httpCon;
+
 import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
