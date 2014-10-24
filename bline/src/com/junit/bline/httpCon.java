@@ -20,13 +20,13 @@ public class httpCon extends Thread implements Runnable
 {
 	String UUID;
 	MainActivity requsetActivity;
-	
-	ResultHandler mHandler = new ResultHandler(requsetActivity);//핸들러 사용을 위한 선언
+	ResultHandler mHandler;
 	
 	public httpCon(String uuid, MainActivity mainActivity)
 	{
 		UUID = uuid;
 		requsetActivity = mainActivity;
+		mHandler = new ResultHandler(requsetActivity);//핸들러 사용을 위한 선언
 	}
 
 	public void run()
@@ -38,24 +38,18 @@ public class httpCon extends Thread implements Runnable
 		DefaultHttpClient client = new DefaultHttpClient();
 		
 		try {
-
 			String En_StringA = URLEncoder.encode(StringA, "utf-8");
-			//TODO
 			String address = "http://bline.azurewebsites.net" + "/dbtest.jsp?UUID=" + En_StringA;
-			
 			Log.i("address의 값 : ", address);
 			HttpGet HG = new HttpGet();
-			
 			HG.setURI(new URI(address));
-			Log.i("수행완료 : ", address);
-			
 			HttpResponse response = client.execute(HG);///실행문제
 			
 			HttpParams params = client.getParams();
 			HttpConnectionParams.setConnectionTimeout(params, 3000);
 			HttpConnectionParams.setSoTimeout(params, 3000);
 			response.setParams(params);
-			Log.i("레알수행완료 : ", address);
+			Log.i("수행완료 : ", address);
 
 			BufferedReader bufreader = new BufferedReader(new InputStreamReader(response.getEntity().getContent(), "utf-8"));
 
@@ -66,7 +60,6 @@ public class httpCon extends Thread implements Runnable
 			{
 				result += line; // 버퍼로 읽어들인 JSON형식의 String을 그대로 result에 넣어준다.
 				Message msg = Message.obtain();
-				
 				msg.obj = result;//line;
 				mHandler.sendMessage(msg);
 				Log.i("응답 값" + " : ", result);
@@ -75,11 +68,9 @@ public class httpCon extends Thread implements Runnable
 		} catch (Exception e) {
 			e.printStackTrace();
 			client.getConnectionManager().shutdown(); // 연결 지연 종료
-
 			String line = "연결 실패";
 			Message msg = Message.obtain();
 			msg.obj = line;
-
 			mHandler.sendMessage(msg);
 		}
 		try {
@@ -91,11 +82,9 @@ public class httpCon extends Thread implements Runnable
 	
 	static class ResultHandler extends Handler {
 	    private final WeakReference<MainActivity> mActivity;
-	         
 	    ResultHandler(MainActivity activity) {
 	        mActivity = new WeakReference<MainActivity>(activity);
 	    }
-
 		@Override
 		public void handleMessage(Message msg) {
 			MainActivity activity = mActivity.get();

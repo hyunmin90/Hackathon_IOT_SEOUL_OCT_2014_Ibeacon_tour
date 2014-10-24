@@ -99,6 +99,8 @@ public class MainActivity extends Activity implements OnClickListener {
 	
 	public void handleMessage(Message msg)
 	{
+		Log.i("핸들러 성공 : ","성공");
+		/*
 		String line = (String)msg.obj;
 		String recString = jsonParserList(line);
 		
@@ -133,6 +135,7 @@ public class MainActivity extends Activity implements OnClickListener {
 			}				
 			alert.show();
 		}
+		*/
 	}
 	
 	private String jsonParserList(String recline)
