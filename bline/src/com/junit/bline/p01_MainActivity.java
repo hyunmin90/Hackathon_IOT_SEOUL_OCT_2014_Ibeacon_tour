@@ -61,6 +61,8 @@ public class p01_MainActivity extends Activity implements OnClickListener, defau
 		Log.e(TAG, "onCreate");
 		
 		setContentView(R.layout.p01_main);
+	
+		
 		bottomBar = (RelativeLayout)findViewById(R.id.bottom_bar);
 		bottomBar.bringToFront();
 		bottomBar.setVisibility(View.GONE);
@@ -272,7 +274,8 @@ public class p01_MainActivity extends Activity implements OnClickListener, defau
 	public void onClick(View v) {
 		
 		int getId = v.getId();
-	
+		
+		ActivityB(v);
 		
 		if (btService.getDeviceState()) {
 			// 블루투스가 지원 가능한 기기일 때
@@ -280,8 +283,6 @@ public class p01_MainActivity extends Activity implements OnClickListener, defau
 		} else {
 			finish();
 		}
-		
-		ActivityB(v);
 		
 		UUID = (EditText) findViewById(R.id.UUID);
 		String uuid = UUID.getText().toString();
@@ -302,6 +303,15 @@ public class p01_MainActivity extends Activity implements OnClickListener, defau
 	public void onActivityResult(int requestCode, int resultCode, Intent data) {
 		Log.d(TAG, "comeback " + resultCode);
 		setResult(resultCode);
+		
+		super.onActivityResult(requestCode, resultCode, data);
+        if(resultCode==RESULT_OK) // 액티비티가 정상적으로 종료되었을 경우
+        {
+            if(requestCode==1) // requestCode==1 로 호출한 경우에만 처리합니다.
+            {
+                Log.d("test", ""+data.getStringExtra("re"));
+            }
+        }
 		
 		/*		
 		switch (requestCode) {

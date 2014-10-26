@@ -35,18 +35,20 @@ public final class R {
         public static final int ic_launcher=0x7f020000;
     }
     public static final class id {
-        public static final int UUID=0x7f090003;
-        public static final int action_settings=0x7f090007;
-        public static final int bottom_bar=0x7f090000;
-        public static final int btn_connect=0x7f090001;
-        public static final int button_mail_delete=0x7f090004;
-        public static final int imageView1=0x7f090006;
-        public static final int txt_result=0x7f090002;
-        public static final int webview=0x7f090005;
+        public static final int UUID=0x7f090004;
+        public static final int action_settings=0x7f090008;
+        public static final int bottom_bar=0x7f090001;
+        public static final int btn_connect=0x7f090002;
+        public static final int button_mail_delete=0x7f090005;
+        public static final int imageView1=0x7f090007;
+        public static final int introView=0x7f090000;
+        public static final int txt_result=0x7f090003;
+        public static final int webview=0x7f090006;
     }
     public static final class layout {
-        public static final int p01_main=0x7f030000;
-        public static final int p02_signin=0x7f030001;
+        public static final int p00_intro=0x7f030000;
+        public static final int p01_main=0x7f030001;
+        public static final int p02_signin=0x7f030002;
     }
     public static final class menu {
         public static final int main=0x7f080000;
