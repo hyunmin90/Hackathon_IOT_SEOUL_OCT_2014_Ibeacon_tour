@@ -6,6 +6,7 @@
     <uses-sdk
         android:minSdkVersion="17"
         android:targetSdkVersion="19" />
+    
 	<uses-permission android:name="android.permission.BLUETOOTH" />
 	<uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 	<uses-permission android:name="android.permission.INTERNET" />
@@ -17,41 +18,65 @@
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    
     <application 
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" 
+        android:label="Bline"
+        android:theme="@android:style/Theme.NoTitleBar"
         android:name="BeaconReferenceApplication">
        
         <activity
-            android:name=".p01_MainActivity"
+            android:name="com.junit.bline.p00_introActivity"
             android:label="@string/app_name" >
             <intent-filter>
-				<action android:name="android.intent.action.MAIN" />
+                <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-            
-            
         </activity>
         
+        <activity
+            android:name="com.junit.bline.p01_MainActivity"
+            android:label="@string/app_name" >
+        </activity>
         
+        <activity
+            android:name="com.junit.bline.p02_signIn"
+            android:label="@string/app_name"
+            android:theme="@android:style/Theme.Dialog" >
+        </activity>
+
+        <receiver
+            android:name="com.junit.bline.ConnReceiver"
+            android:enabled="true"
+            android:priority="0" >
+
+            <intent-filter>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.junit.bline.blineService"
+            android:exported="false" >
+
+            <intent-filter>
+                <action android:name="android.servcice.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </service>
         
         <activity
             android:launchMode="singleInstance"
             android:name="org.altbeacon.beaconreference.MonitoringActivity"
             android:label="@string/app_name" >
-            
-            
-            
         </activity>
+
         <activity
             android:name="org.altbeacon.beaconreference.RangingActivity"
             android:label="@string/app_name" >
             <intent-filter>
             </intent-filter>
         </activity>
-        
     </application>
-
 </manifest>

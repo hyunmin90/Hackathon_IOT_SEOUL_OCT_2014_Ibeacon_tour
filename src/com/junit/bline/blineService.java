@@ -1,4 +1,4 @@
-package org.altbeacon.beaconreference;
+package com.junit.bline;
 
 import android.app.Service;
 import android.bluetooth.BluetoothAdapter;

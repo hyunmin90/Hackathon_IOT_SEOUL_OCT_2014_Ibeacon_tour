@@ -1,6 +1,6 @@
-package org.altbeacon.beaconreference;
+package com.junit.bline;
 
-import org.altbeacon.beaconreference.ObservableWebView.OnScrollChangedCallback;
+import org.altbeacon.beaconreference.R;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -34,6 +34,8 @@ import android.widget.Toast;
 import org.altbeacon.beaconreference.R.anim;
 import org.altbeacon.beaconreference.R.id;
 import org.altbeacon.beaconreference.R.layout;
+
+import com.junit.bline.ObservableWebView.OnScrollChangedCallback;
 import com.junit.http.defaultHandler;
 import com.junit.http.httpCon;
 
@@ -93,12 +95,24 @@ public class p01_MainActivity extends Activity implements OnClickListener, defau
 		btn_Connect = (Button) findViewById(R.id.btn_connect);
 		btn_Connect.setOnClickListener(this);
 		
-		
+		// BluetoothService 클래스 생성
+		if (btService == null) {
+			btService = new BluetoothService(this, mHandler);
+		}
 		
 		slideup = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_from_bottom);
 		slidedown = AnimationUtils.loadAnimation(getApplicationContext(), R.anim.slide_to_bottom);
 		
+		startService(new Intent("android.servcice.MAIN"));
 		
+		if (isNetworkStat()) {
+			Log.i(TAG, "NetworkSate enabled");
+			AppStart();
+			return;
+		}
+		else{
+			Log.i(TAG, "NetworkSate unabled");
+		}
 	}
 	
 	private class CustomeGestureDetector extends SimpleOnGestureListener {      
@@ -262,8 +276,9 @@ public class p01_MainActivity extends Activity implements OnClickListener, defau
 	@Override
 	public void onClick(View v) {
 		
+		
 		int getId = v.getId();
-	
+		
 		
 		if (btService.getDeviceState()) {
 			// 블루투스가 지원 가능한 기기일 때
@@ -271,6 +286,7 @@ public class p01_MainActivity extends Activity implements OnClickListener, defau
 		} else {
 			finish();
 		}
+		
 		
 		ActivityB(v);
 		
@@ -285,8 +301,10 @@ public class p01_MainActivity extends Activity implements OnClickListener, defau
         editor.commit();
         //sharedPre TEST end
         
+        //통신 시작
 		httpCon<p01_MainActivity> thread = new httpCon<p01_MainActivity>(uuid, p01_MainActivity.this);
 		thread.start();
+		 
 	}
 	
 	//A에서 B로 갔다가 다시 A로 넘어올 때 사용하는, 안드로이드에서 제공하는 기본 메소드입니다.

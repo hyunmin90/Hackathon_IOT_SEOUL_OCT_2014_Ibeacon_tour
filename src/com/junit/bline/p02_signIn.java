@@ -1,4 +1,4 @@
-package org.altbeacon.beaconreference;
+package com.junit.bline;
 
 import org.altbeacon.beaconreference.R;
 import org.altbeacon.beaconreference.R.layout;

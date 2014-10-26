@@ -1,4 +1,4 @@
-package org.altbeacon.beaconreference;
+package com.junit.bline;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
