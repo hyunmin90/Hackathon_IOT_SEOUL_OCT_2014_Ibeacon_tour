@@ -28,7 +28,7 @@
        
         <activity
             android:name="com.junit.bline.p00_introActivity"
-            android:label="@string/app_name" >
+            android:label="Bline" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
