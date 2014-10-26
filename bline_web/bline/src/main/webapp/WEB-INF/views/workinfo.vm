@@ -1,0 +1,3 @@
+#parse("/common/header.vm")
+
+#parse("/common/footer.vm")

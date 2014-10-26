@@ -1,0 +1,141 @@
+/* Space out content a bit */
+body {
+ padding:0px;
+}
+/* Everything but the jumbotron gets side spacing for mobile first views */
+.header h3 {
+  padding-bottom: 19px;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 40px;
+  color:#4D75DB;
+  display:inline; 
+}
+
+#dialog{
+	display :none;
+	background-color: #fff;
+	position:absolute;
+	top : -180px;
+	margin:10px;
+	padding:20px;
+	box-shadow:0 1px 1px rgba(0,0,0,.05);
+	box-sizing: border-box;
+	border-radius: 15px;
+	z-index: 90000000;
+	left: -30px;
+	right: -30px;
+}
+
+.dropdown ul {diplay:none}
+.dropdown:hover ul {display:block} 
+.dropdown #userInfo  {
+	height: 40px;
+}
+.dropdown img{height:40px}
+
+/* Custom page footer */
+.footer {
+  padding-top: 19px;
+  color: #777;
+  border-top: 1px solid #e5e5e5;
+}
+
+/* Customize container */
+.cards {
+	margin-right : 5px;
+	margin-left : 5px;
+}
+.container-narrow > hr {
+  margin: 30px 0;
+}
+
+.cards .card_plus{
+	margin: 5px;
+	border: 1px dashed #ddd;
+	
+}
+.cards .btn{
+	padding : 15px 0px;
+	border: 0px dashed #ddd;
+	width:100%;
+	font-size: small;
+	color: #777;
+}
+
+.cards .btn:active{
+	background-color: #fff;
+}
+
+.card {
+	font-family: 'Malgun Gothic','맑은 고딕',"돋움",dotum,sans-serif;
+	margin: 5px;
+	background-color: rgba(253, 163, 24, 0.78);
+	border: 1px solid transparent;
+	box-shadow:0 1px 1px rgba(0,0,0,.05);
+	box-sizing: border-box;
+	border-radius: 15px;
+	height:150px;
+	padding-left: 10px;
+	color: #fff;
+	font-size: large;
+	position: absolute;
+	display: inline-block;
+	right: 5px;
+	left: 5px;
+}
+
+
+/* Main marketing message and sign up button */
+.jumbotron {
+  text-align: left;
+  border-bottom: 1px solid #e5e5e5;
+  font-family: 'Malgun Gothic','맑은 고딕',"돋움",dotum,sans-serif;
+  margin-bottom: 0
+}
+.jumbotron .title{
+	font-size: 35px;
+	color: #333;
+	text-align: -1;
+}
+.jumbotron .subtitle{
+  	color: #686767;
+  	margin-top: 18px;
+  	font-size: 20px;
+  	text-align: -1;
+}
+.jumbotron .btn {
+  padding: 14px 24px;
+  font-size: 21px;
+}
+/* Supporting marketing content */
+.marketing {
+  margin: 40px 0;
+}
+.marketing p + h4 {
+  margin-top: 28px;
+}
+.course {
+	border: 1px solid #e5e5e5;
+}
+/* Responsive: Portrait tablets and up */
+  /* Remove the padding we set earlier */
+.bs-docs-header{
+	margin : 0px; 
+	padding  : 0px;
+  	line-height: 40px;
+  	color:#4D75DB;
+  	display:inline;
+}
+.bs-docs-header .bg-primary{
+	vertical-align: middle;
+	text-align: center;
+	font-size: x-large;
+	background-color: #5448FF;
+}
+
+  /* Remove the bottom border on the jumbotron for visual effect */
+  .jumbotron {
+    border-bottom: 0;
+  }
+}

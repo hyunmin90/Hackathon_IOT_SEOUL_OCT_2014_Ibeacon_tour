@@ -1,0 +1,60 @@
+#parse("/common/header.vm")
+<!-- 민원 검색 dialog  -->
+<div id="dialog">
+	<div class="field-set"  title="Basic dialog" >
+		<label for="inputWork">나의 민원 업무</label>
+  			<input type="text" id="inputWork" placeholder="민원 종류를 입력하세요">
+  			<input type="button" onclick="addCard()" class="btn btn-info" value="검색">
+	</div>
+</div>
+<script type="text/javascript">
+	<!-- jquery method init() -->		
+	$(function(){	
+		$('.card').slice(1).css('positon','absolute');
+		$('.card').click(function(){
+			location.href = '/bline/id/workinfo/'+$('.card').index(this);
+		});
+	});
+	
+	addButton = function(index) {
+		$(function(){	
+			$('#dialog').dialog({
+		    	height: 300,
+		        width: 300,
+		        closeOnEscape: false,
+		        open: function(event, ui) { 
+		           $(".ui-dialog-titlebar-close", $(this).parent()).hide(); 
+		        }
+		    });
+			$('#dialog').css('display','block');
+		});	
+	}
+	addCard =function(){
+		var searchResult = $('#inputWork').val();
+		console.log($('.card:eq(-1)').css('top'))
+		var top = parseInt($('.card:eq(-1)').css('top'))+70+"px"; 
+		var zindex = parseInt($('.card:eq(-1)').css('z-index'))+1; 
+		var randomcolor = 'rgb(' + (Math.floor((256-199)*Math.random()) + 200) + ','
+	          + (Math.floor((256-199)*Math.random()) + 200) + ','
+	          + (Math.floor((256-199)*Math.random()) + 200)+')';
+		$('.cards').append("<div class='card' style='z-index: "+ zindex+";" 
+							+"top:"+top+"; background-color:"+randomcolor+";'>"
+						+"<strong><span>"+searchResult+"</span></strong></div>");
+		$('#dialog').css('display','none');
+	}
+</script>
+<div class="cards bs-docs-section">
+	<div class = "card_plus">
+		<button type="button" onclick="addButton();" class="btn btn-default">이곳을 터치하여 자주쓰는 민원을 추가하세요</button>
+	</div>
+	<div class="card" style="z-index: 1; background-color:rgba(169, 24, 253, 0.78); top:100px ">
+		<strong><span>주민등록증 재발급</span></strong>
+  	</div>
+	<div class="card" style="z-index:2;background-color:rgba(24, 140, 253, 0.78); top:170px;">
+		<strong><span>가족관계증명서</span></strong>
+  	</div>
+	<div class="card" style="z-index: 3; border-bottom-color: rgba(183, 250, 232, 0.78); top:240px">
+		<strong><span>재학증명서</span></strong>
+  	</div>
+</div>
+#parse("/common/footer.vm")
