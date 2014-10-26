@@ -18,11 +18,7 @@ import org.altbeacon.beacon.BeaconParser;
 import org.altbeacon.beacon.MonitorNotifier;
 import org.altbeacon.beacon.Region;
 
-/**
- * 
- * @author dyoung
- * @author Matt Tyler
- */
+
 public class MonitoringActivity extends Activity {
 	protected static final String TAG = "MonitoringActivity";
     private BeaconManager beaconManager;
@@ -31,8 +27,13 @@ public class MonitoringActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		Log.d(TAG, "onCreate");
 		super.onCreate(savedInstanceState);
+		
+		
 		setContentView(R.layout.activity_monitoring);
 		verifyBluetooth();
+		
+		
+
 	}
 	
 	public void onRangingClicked(View view) {
@@ -107,7 +108,13 @@ public class MonitoringActivity extends Activity {
     }
     
     public void didEnterRegion(Region region) {
-      logToDisplay("I just saw a beacon named "+ region.getUniqueId() +" for the first time!" );
+    	
+
+      logToDisplay("I just saw a beacon 이름이그래요~~ "+ region.getUniqueId() +" for the first time!" );
+		
+		
+    
+    
     }
 
     public void didExitRegion(Region region) {
