@@ -15,7 +15,8 @@ passport.serializeUser(function(user, done) {
 
     console.log(user.id);
     console.log(user.displayName);
-    console.log(checkifregistered(user.id));
+    if(checkifregistered(12345))
+    {console.log("fail");}
     //console.log(user);
     //console.log(user.last_name);
 
