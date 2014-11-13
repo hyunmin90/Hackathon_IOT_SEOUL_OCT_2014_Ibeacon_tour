@@ -35,7 +35,7 @@ var app = express();
 passport.use(new FacebookStrategy({
         clientID: ' 410689979097098 ',
         clientSecret: '47d689b5c9a71d166e87fa2d9dd30ab7',
-        callbackURL: "http://localhost:3000/auth/facebook/callback"
+        callbackURL: "http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/auth/facebook/callback"
     },
     function(accessToken, refreshToken, profile, done) {
         console.log(profile);
