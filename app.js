@@ -8,7 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
-
+var mysql = require('mysql');
 
 
 var app = express();
@@ -16,7 +16,16 @@ var app = express();
 var passport = require('passport')
     , FacebookStrategy = require('passport-facebook').Strategy;
 
+var connection = mysql.createConnection(
+    {
+      host     : 'ja-cdbr-azure-west-a.cloudapp.net',
+      user     : 'bb067d1b1ed5aa',
+      password : '5d2f5746',
+      database : 'bline',
+    }
+);
 
+connection.connect();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
