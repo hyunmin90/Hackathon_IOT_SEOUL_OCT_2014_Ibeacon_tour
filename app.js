@@ -59,13 +59,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', routes);
 app.use('/users', users);
-
-
-// development only
-if ('development' == app.get('env')) {
-  app.use(express.errorHandler());
-}
- 
 app.get('/auth/facebook', passport.authenticate('facebook'));
 app.get('/auth/facebook/callback',
     passport.authenticate('facebook', { successRedirect: '/login_success',
@@ -83,6 +76,31 @@ function ensureAuthenticated(req, res, next) {
     // 로그인이 안되어 있으면, login 페이지로 진행
     res.redirect('/');
 }
+
+
+
+// catch 404 and forward to error handler
+app.use(function(req, res, next) {
+    var err = new Error('Not Found');
+    err.status = 404;
+    next(err);
+});
+
+// error handlers
+
+// development error handler
+// will print stacktrace
+if (app.get('env') === 'development') {
+    app.use(function(err, req, res, next) {
+        res.status(err.status || 500);
+        res.render('error', {
+            message: err.message,
+            error: err
+        });
+    });
+}
+
+
 
 
 
