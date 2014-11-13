@@ -15,7 +15,7 @@ passport.serializeUser(function(user, done) {
 
     console.log(user.id);
     console.log(user.displayName);
-    if((checkifregistered(user.id)).length>0)
+    if(checkifregistered(user.id)>0)
     {console.log("you have found your way");}
     //console.log(user);
     //console.log(user.last_name);
@@ -84,7 +84,7 @@ function checkifregistered(UIN)
 	dbcon.query(queryString, function(err, rows, fields) {
     if (err) throw err;
  	console.log(rows);
- 	return rows;
+ 	return rows.length;
 	});
 	
 }
