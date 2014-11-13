@@ -1,9 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
+var passport = require('passport')
+    , FacebookStrategy = require('passport-facebook').Strategy;
 
 
-
+app.use(passport.initialize());
+app.use(passport.session());
 
 // serialize
 // 인증후 사용자 정보를 세션에 저장
