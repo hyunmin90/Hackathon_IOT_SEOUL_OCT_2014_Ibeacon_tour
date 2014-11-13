@@ -4,10 +4,13 @@ var router = express.Router();
 
 
 
+router.get('/', function(req, res) {
+  
+});
+
 router.get('/auth/facebook', passport.authenticate('facebook'));
 router.get('/auth/facebook/callback',
-passport.authenticate('facebook', { successRedirect: '/login_success',
-failureRedirect: '/login_fail' }));
+
 router.get('/login_success', ensureAuthenticated, function(req, res){
 
     res.send(req.user);
@@ -24,9 +27,6 @@ function ensureAuthenticated(req, res, next) {
 }
 
 
-/* GET users listing. */
-router.get('/', function(req, res) {
-  res.send('respond with a resource');
-});
+
 
 module.exports = router;
