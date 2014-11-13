@@ -15,7 +15,7 @@ passport.serializeUser(function(user, done) {
 
     console.log(user.id);
     console.log(user.displayName);
-    if(checkifregistered(user.id))
+    if((checkifregistered(user.id)).length>0)
     {console.log("you have found your way");}
     //console.log(user);
     //console.log(user.last_name);
