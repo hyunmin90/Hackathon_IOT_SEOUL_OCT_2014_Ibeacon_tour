@@ -83,8 +83,9 @@ function checkifregistered(UIN)
 	dbcon.query(queryString, function(err, rows, fields) {
     if (err) throw err;
  	console.log(rows);
+ 	return rows;
 	});
-	return rows;
+	
 }
 
 
