@@ -94,6 +94,7 @@ function checkifregistered(UIN,displayname)
  			{
     		if (err) throw err;
  			console.log(rows);
+ 			dbcon.end();
 			});
 
  		}
