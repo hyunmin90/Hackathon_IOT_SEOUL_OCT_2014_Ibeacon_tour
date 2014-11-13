@@ -8,21 +8,22 @@ var passport = require('passport')
 // 인증후 사용자 정보를 세션에 저장
 passport.serializeUser(function(user, done) {
 
-	var queryString = "INSERT INTO `users` (`username`,`UIN`) VALUES ('"+user.displayName+"', '"+user.id+"')";
+	//var queryString = "INSERT INTO `users` (`username`,`UIN`) VALUES ('"+user.displayName+"', '"+user.id+"')";
 
 
     console.log('serialize');
 
     console.log(user.id);
     console.log(user.displayName);
+    console.log(checkifregistered(user.id));
     //console.log(user);
     //console.log(user.last_name);
 
 
-    dbcon.query(queryString, function(err, rows, fields) {
+    /*dbcon.query(queryString, function(err, rows, fields) {
     if (err) throw err;
  	console.log(rows);
-	});
+	});*/
  	
 
     done(null, user);
@@ -74,6 +75,16 @@ function ensureAuthenticated(req, res, next) {
     if (req.isAuthenticated()) { return next(); }
     // 로그인이 안되어 있으면, login 페이지로 진행
     res.redirect('/');
+}
+
+function checkifregistered(UIN)
+{
+	var queryString = "SELECT * FROM users WHERE UIN='"+UIN+"'";
+	dbcon.query(queryString, function(err, rows, fields) {
+    if (err) throw err;
+ 	console.log(rows);
+	});
+	return rows;
 }
 
 
