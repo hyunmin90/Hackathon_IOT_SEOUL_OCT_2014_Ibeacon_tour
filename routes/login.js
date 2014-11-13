@@ -40,8 +40,8 @@ router.get('/auth/facebook', passport.authenticate('facebook'));
 
 
 router.get('/auth/facebook/callback',
-passport.authenticate('facebook', { successRedirect: '/login_success',
-failureRedirect: '/login_fail' }));
+passport.authenticate('facebook', { successRedirect: '/login/login_success',
+failureRedirect: '/login/login_fail' }));
 
 
 
