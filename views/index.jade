@@ -1,6 +1,22 @@
-!!! 5
-html
-  head
-    title
+
+html(lang='en')
+head
+    meta(http-equiv='Content-Type', content='text/html; charset=UTF-8')
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    link(rel='icon', href='http://getbootstrap.com/favicon.ico')
+    title Starter Template for Bootstrap
+    link(href='http://getbootstrap.com/dist/css/bootstrap.min.css', rel='stylesheet')
+    link(href='/css/style.css', rel='stylesheet')
+    link(href='http://getbootstrap.com/examples/starter-template/starter-template.css', rel='stylesheet')
   body
-    button(onclick='location.href=\'/login/auth/facebook\'') Facebook login
+
+    .container(style='')
+    	button(onclick='location.href=\'/login/auth/facebook\'') Facebook login
+    
+    script(src='/js/jquery.min.js')
+    script(src='/js/bootstrap.min.js')
+    script(src='/js/ie10-viewport-bug-workaround.js')
