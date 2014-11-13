@@ -8,14 +8,14 @@ var passport = require('passport')
 // 인증후 사용자 정보를 세션에 저장
 passport.serializeUser(function(user, done) {
 
-	//var queryString = "INSERT INTO `users` (`username`,`UIN`) VALUES ("+user.name+", "+user.id+")";
+	var queryString = "INSERT INTO `users` (`username`,`UIN`) VALUES ("+user.displayName+", "+user.id+")";
 
 
     console.log('serialize');
 
     console.log(user.id);
-    console.log(user.name);
-    console.log(user);
+    console.log(user.displayName);
+    //console.log(user);
     //console.log(user.last_name);
 
 
