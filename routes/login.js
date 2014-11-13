@@ -19,13 +19,13 @@ passport.serializeUser(function(user, done) {
     //console.log(user.last_name);
 
 
-   /* dbcon.query(queryString, function(err, rows, fields) {
+    dbcon.query(queryString, function(err, rows, fields) {
     if (err) throw err;
  	console.log(rows);
 	});
  	
-    console.log(user);
-    done(null, user);*/
+
+    done(null, user);
 });
 
 
