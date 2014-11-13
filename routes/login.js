@@ -77,7 +77,7 @@ function ensureAuthenticated(req, res, next) {
     res.redirect('/');
 }
 
-function checkifregistered(UIN,displayname,)
+function checkifregistered(UIN,displayname)
 {	
 	var numberofString;
 	var queryString = "SELECT * FROM users WHERE UIN='"+UIN+"'";
