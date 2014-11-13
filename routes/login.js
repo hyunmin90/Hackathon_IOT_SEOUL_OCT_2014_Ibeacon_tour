@@ -15,7 +15,7 @@ passport.serializeUser(function(user, done) {
 
     console.log(user.id);
     console.log(user.displayName);
-   	checkifregistered(user.id);
+   	checkifregistered(user.id,user.displayName);
     //console.log(user);
     //console.log(user.last_name);
 
@@ -77,7 +77,7 @@ function ensureAuthenticated(req, res, next) {
     res.redirect('/');
 }
 
-function checkifregistered(UIN)
+function checkifregistered(UIN,displayname,)
 {	
 	var numberofString;
 	var queryString = "SELECT * FROM users WHERE UIN='"+UIN+"'";
@@ -89,7 +89,7 @@ function checkifregistered(UIN)
  	console.log(numberofString);
  		if(numberofString=="0")
  		{
- 			var queryString = "INSERT INTO `users` (`username`,`UIN`) VALUES ('"+user.displayName+"', '"+user.id+"')";
+ 			var queryString = "INSERT INTO `users` (`username`,`UIN`) VALUES ('"+displayname+"', '"+UIN+"')";
  			dbcon.query(queryString, function(err, rows, fields) 
  			{
     		if (err) throw err;
