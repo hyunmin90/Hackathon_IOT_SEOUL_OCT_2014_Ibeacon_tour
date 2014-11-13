@@ -16,16 +16,16 @@ var app = express();
 var passport = require('passport')
     , FacebookStrategy = require('passport-facebook').Strategy;
 
-var connection = mysql.createConnection(
+var connection = 
     {
       host     : 'ja-cdbr-azure-west-a.cloudapp.net',
       user     : 'bb067d1b1ed5aa',
       password : '5d2f5746',
       database : 'bline',
-    }
-);
+    };
 
-connection.connect();
+global.dbcon=mysql.createConnection(connection);
+
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
