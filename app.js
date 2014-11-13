@@ -16,6 +16,7 @@ var passport = require('passport')
 // 인증후 사용자 정보를 세션에 저장
 passport.serializeUser(function(user, done) {
     console.log('serialize');
+    console.log(user);
     done(null, user);
 });
 
@@ -66,6 +67,7 @@ app.get('/auth/facebook/callback',
     passport.authenticate('facebook', { successRedirect: '/login_success',
         failureRedirect: '/login_fail' }));
 app.get('/login_success', ensureAuthenticated, function(req, res){
+
     res.send(req.user);
 });
 app.get('/logout', function(req, res){
