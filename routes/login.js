@@ -86,7 +86,16 @@ function checkifregistered(UIN)
  	console.log(rows);
  	//console.log(rows.length);
  	numberofString=rows.length;
- 	console.log(numberofString);
+ 		if(numberofString==0)
+ 		{
+ 			var queryString = "INSERT INTO `users` (`username`,`UIN`) VALUES ('"+user.displayName+"', '"+user.id+"')";
+ 			dbcon.query(queryString, function(err, rows, fields) 
+ 			{
+    		if (err) throw err;
+ 			console.log(rows);
+			});
+
+ 		}
 	});
 
 
