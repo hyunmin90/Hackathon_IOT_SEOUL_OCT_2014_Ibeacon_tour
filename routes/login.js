@@ -7,7 +7,15 @@ var passport = require('passport')
 // serialize
 // 인증후 사용자 정보를 세션에 저장
 passport.serializeUser(function(user, done) {
+	var queryString = 'SELECT * FROM users';
+
     console.log('serialize');
+    
+    dbcon.query(queryString, function(err, rows, fields) {
+    if (err) throw err;
+ 	console.log(rows);
+	});
+ 
     console.log(user);
     done(null, user);
 });
