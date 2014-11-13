@@ -45,7 +45,7 @@ passport.use(new FacebookStrategy({
 ));
 
 passport.authenticate('facebook', { successRedirect: '/login/login_success',
-failureRedirect: '/login/login_fail' }));
+failureRedirect: '/login/login_fail' });
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
