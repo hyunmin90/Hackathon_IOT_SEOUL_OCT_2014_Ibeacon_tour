@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
+var spotInfo = require('./routes/spotInfo');
 var mysql = require('mysql');
 
 
@@ -44,7 +45,7 @@ app.use(passport.session());
 app.use('/', routes);
 app.use('/users', users);
 app.use('/login',login);
-
+app.use('/spotInfo',spotInfo);
 
 
 // catch 404 and forward to error handler
@@ -67,10 +68,6 @@ if (app.get('env') === 'development') {
         });
     });
 }
-
-
-
-
 
 // production error handler
 // no stacktraces leaked to user
