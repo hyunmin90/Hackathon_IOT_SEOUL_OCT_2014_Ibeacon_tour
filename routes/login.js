@@ -12,9 +12,11 @@ passport.serializeUser(function(user, done) {
 
 
     console.log('serialize');
+
     console.log(user.id);
-    console.log(user.first_name);
-    console.log(user.last_name);
+    console.log(user.name);
+    console.log(user);
+    //console.log(user.last_name);
 
 
    /* dbcon.query(queryString, function(err, rows, fields) {
