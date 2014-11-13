@@ -86,10 +86,11 @@ function checkifregistered(UIN)
  	console.log(rows);
  	//console.log(rows.length);
  	numberofString=rows.length;
+ 	console.log(numberofString);
 	});
-	console.log(numberofString);
 
-	return numberofString;
+
+
 }
 
 
