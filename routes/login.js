@@ -22,7 +22,7 @@ passport.serializeUser(function(user, done) {
     var request = require('request');
 request('http://graph.facebook.com/'+user.id+'/picture?type=square', function (error, response, body) {
   if (!error && response.statusCode == 200) {
-    console.log(body) // Print the body of response.
+    console.log(response) // Print the body of response.
   }
 })
        
