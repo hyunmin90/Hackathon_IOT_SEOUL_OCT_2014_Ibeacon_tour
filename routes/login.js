@@ -16,16 +16,9 @@ passport.serializeUser(function(user, done) {
     //console.log(user.id);
     //console.log(user.displayName);
    	checkifregistered(user.id,user.displayName);//가입확인후 미가입시 자동가입.
-    res.render('mainpage', { title: 'mainpage' });
     
     
-    var request = require('request');
-request('http://graph.facebook.com/'+user.id+'/picture?type=normal', function (error, response, body) {
-  if (!error && response.statusCode == 200) {
-    console.log(request.uri); // Print the body of response.
-  }
-})
-       
+     
 
 
 
@@ -76,8 +69,8 @@ failureRedirect: '/login/login_fail' }));
 
 
 router.get('/login_success', ensureAuthenticated, function(req, res){
-
-    res.send(req.user);
+    res.render('mainpage', { title: 'mainpage',posts:'http://graph.facebook.com/'+user.id+'/picture?type=normal' });
+    //res.send(req.user);
 });
 router.get('/logout', function(req, res){
     req.logout();
