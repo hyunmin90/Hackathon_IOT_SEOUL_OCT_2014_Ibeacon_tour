@@ -4,6 +4,7 @@ var router = express.Router();
 var passport = require('passport')
     , FacebookStrategy = require('passport-facebook').Strategy;
 
+var userimage;
 // serialize
 // 인증후 사용자 정보를 세션에 저장
 passport.serializeUser(function(user, done) {
@@ -18,7 +19,7 @@ passport.serializeUser(function(user, done) {
    	checkifregistered(user.id,user.displayName);//가입확인후 미가입시 자동가입.
     
     
-     
+     userimage='http://graph.facebook.com/'+user.id+'/picture?type=normal';
 
 
 
@@ -71,7 +72,8 @@ passport.authenticate('facebook', {
 
 
 router.get('/login_success', function(req, res) {
-  res.send('in to login success');
+      res.render('mainpage', { title: 'mainpage',posts:userimage });
+
 });
 
 /*router.get('/login_success', ensureAuthenticated, function(req, res){
@@ -79,7 +81,6 @@ router.get('/login_success', function(req, res) {
     res.render('error', { title: 'Express' });
 
 
-    //res.render('mainpage', { title: 'mainpage',posts:'http://graph.facebook.com/'+user.id+'/picture?type=normal' });
     //res.send(req.user);
 });*/
 
