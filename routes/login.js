@@ -19,18 +19,13 @@ passport.serializeUser(function(user, done) {
 
     http://graph.facebook.com/10203079159275148/picture?type=square
     
-
-    $.ajax({'url': 'http://graph.facebook.com/'+user.id+'/picture?type=square',
-       'type' : 'get',
-       'success' : function(data){
-           console.log(data);
-       },
-       'error': function(jqXHR, data){
-           console.log(data);
-           //comcast.cvs.apps.alerts.test.showErrorDialog( '<div style="color:red;font-weight:bold;">' +
-    //                           'Failed to save the settop box. See server logs for problem.</div>' );
-           },
-   });    
+    var request = require('request');
+request('http://graph.facebook.com/'+user.id+'/picture?type=square', function (error, response, body) {
+  if (!error && response.statusCode == 200) {
+    console.log(body) // Print the body of response.
+  }
+})
+       
 
 
 
