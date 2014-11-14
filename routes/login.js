@@ -11,11 +11,11 @@ passport.serializeUser(function(user, done) {
 	//var queryString = "INSERT INTO `users` (`username`,`UIN`) VALUES ('"+user.displayName+"', '"+user.id+"')";
 
 
-    console.log('serialize');
-
-    console.log(user.id);
-    console.log(user.displayName);
-   	checkifregistered(user.id,user.displayName);
+    //console.log('serialize');
+    //console.log(user);
+    //console.log(user.id);
+    //console.log(user.displayName);
+   	checkifregistered(user.id,user.displayName);//가입확인후 미가입시 자동가입.
     //console.log(user);
     //console.log(user.last_name);
 
@@ -34,7 +34,7 @@ passport.serializeUser(function(user, done) {
 // 인증후, 사용자 정보를 세션에서 읽어서 request.user에 저장
 passport.deserializeUser(function(user, done) {
     //findById(id, function (err, user) {
-    console.log('deserialize');
+    //console.log('deserialize');
     done(null, user);
     //});
 });
@@ -83,10 +83,10 @@ function checkifregistered(UIN,displayname)
 	var queryString = "SELECT * FROM users WHERE UIN='"+UIN+"'";
 	dbcon.query(queryString, function(err, rows, fields) {
     if (err) throw err;
- 	console.log(rows);
+ 	//console.log(rows);
  	//console.log(rows.length);
  	numberofString=rows.length;
- 	console.log(numberofString);
+ 	//console.log(numberofString);
  		if(numberofString=="0")
  		{
  			var queryString = "INSERT INTO `users` (`username`,`UIN`) VALUES ('"+displayname+"', '"+UIN+"')";
