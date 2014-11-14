@@ -69,7 +69,11 @@ failureRedirect: '/login/login_fail' }));
 
 
 router.get('/login_success', ensureAuthenticated, function(req, res){
-    res.render('mainpage', { title: 'mainpage',posts:'http://graph.facebook.com/'+user.id+'/picture?type=normal' });
+    console.log("login succedded!!!!");
+    res.render('error', { title: 'Express' });
+
+
+    //res.render('mainpage', { title: 'mainpage',posts:'http://graph.facebook.com/'+user.id+'/picture?type=normal' });
     //res.send(req.user);
 });
 router.get('/logout', function(req, res){
