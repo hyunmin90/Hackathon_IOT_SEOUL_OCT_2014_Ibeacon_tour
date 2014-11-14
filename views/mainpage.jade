@@ -9,11 +9,13 @@ html
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
 
   body
+   block content
+   h1= posts
     .header
       h2.col-xs-12 Btour
     .container.col-xs-12
       .profile
-        img(alt='user' )=posts
+        img(alt='user' )
         p.col-xs-12 yuki
       .col-xs-12
         span.add(onclick='gotoAdd()') +
