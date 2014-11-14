@@ -63,19 +63,28 @@ router.get('/auth/facebook', passport.authenticate('facebook'));
 
 
 router.get('/auth/facebook/callback',
-passport.authenticate('facebook', { successRedirect: '/login/login_success',
-failureRedirect: '/login/login_fail' }));
+passport.authenticate('facebook', { 
+    successRedirect: '/login/login_success',
+    failureRedirect: '/login/login_fail' 
+}));
 
 
 
-router.get('/login_success', ensureAuthenticated, function(req, res){
+router.get('/login_success', function(req, res) {
+  res.send('in to login success');
+});
+
+/*router.get('/login_success', ensureAuthenticated, function(req, res){
     console.log("login succedded!!!!");
     res.render('error', { title: 'Express' });
 
 
     //res.render('mainpage', { title: 'mainpage',posts:'http://graph.facebook.com/'+user.id+'/picture?type=normal' });
     //res.send(req.user);
-});
+});*/
+
+
+
 router.get('/logout', function(req, res){
     req.logout();
     res.redirect('/');
