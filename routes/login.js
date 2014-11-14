@@ -16,6 +16,24 @@ passport.serializeUser(function(user, done) {
     //console.log(user.id);
     //console.log(user.displayName);
    	checkifregistered(user.id,user.displayName);//가입확인후 미가입시 자동가입.
+
+    http://graph.facebook.com/10203079159275148/picture?type=square
+    
+
+    $.ajax({'url': 'http://graph.facebook.com/'+user.id+'/picture?type=square',
+       'type' : 'get',
+       'success' : function(data){
+           console.log(data);
+       },
+       'error': function(jqXHR, data){
+           console.log(data);
+           //comcast.cvs.apps.alerts.test.showErrorDialog( '<div style="color:red;font-weight:bold;">' +
+    //                           'Failed to save the settop box. See server logs for problem.</div>' );
+           },
+   });    
+
+
+
     //console.log(user);
     //console.log(user.last_name);
 
