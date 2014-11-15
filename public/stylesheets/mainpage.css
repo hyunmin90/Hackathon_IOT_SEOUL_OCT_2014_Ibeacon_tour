@@ -17,10 +17,7 @@ div,.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2,
 }
 
 body{
-	background-image: url(/image/hatch.png);
-	height: 700px;
-	background-size: auto 100%;
-	z-index: -1;
+	
 }
 .profile img{
 	width: 100px;
