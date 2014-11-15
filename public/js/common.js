@@ -102,7 +102,7 @@ $(document).ready(function(){
 	btour.UI.appendloginpage();
 	btour.UI.firesearch();
 	$('#example').donetyping(function(){
-  	$('#example-output').text('Event last fired @ ' + (new Date().toUTCString()));
+  	alert("event fired");
 });
 
 });
