@@ -21,9 +21,10 @@ btour.UI=
 
     	});
 
-	}
+	},
 	clickedevents:function()
-	{
+	{	
+		alert("hello");
 		$(".add").click(function(){
 			var url = "/choice";    
 			$(location).attr('href',url);
