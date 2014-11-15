@@ -8,6 +8,7 @@ var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var login = require('./routes/login');
+var spotInfo = require('./routes/spotInfo');
 var mysql = require('mysql');
 var choice = require('./routes/choice');
 var userdatas = require('./routes/userdatas');
@@ -52,6 +53,7 @@ app.use('/choice',choice);
 app.use('/userdatas',userdatas);
 app.use('/recommend', recommend);
 app.use('/search',search);
+app.use('/spotInfo', spotInfo);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
