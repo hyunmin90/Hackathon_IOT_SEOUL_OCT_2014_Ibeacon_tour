@@ -39,7 +39,7 @@ btour.UI=
 
 };
 
-$(window).load(function(){
+$(document).ready(function(){
 	btour.UI.clickedevents();
 
 });
