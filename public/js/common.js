@@ -115,7 +115,7 @@ $(document).ready(function(){
 	btour.UI.appendloginpage();
 	btour.UI.firesearch();
 	$('#search').donetyping(function(){
-  	btour.UI.doneTyping90;
+  	btour.UI.doneTyping();
 });
 
 });
