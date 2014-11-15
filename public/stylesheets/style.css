@@ -8,8 +8,8 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  z-index: -10;
 }
-
 
 button {
 background-image: url(https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xap1/t39.2178-6/851558_575761415814161_1164808389_n.png);
@@ -45,12 +45,6 @@ div,.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2,
 	padding: 11px;
 }
 
-.container{
-	background-image: url(/image/hatch.png);
-	height: 700px;
-	background-size: auto 100%;
-	z-index: -1;
-}
 .profile img{
 	width: 100px;
 	height: 100px;
@@ -117,31 +111,55 @@ div,.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2,
 	margin: 0px 10px 20px 0;
 }
 
-.choice .container{
+.choicecontainer{
 	background-image: url("http://cfile10.uf.tistory.com/image/1255560D4CADAB1CAD2443");
 	height: 700px;
 	z-index: -1;
 }
 
-.choice .container p{
+.search-box p, .recommend-box p{
 	font-size: 25px;
 	color: #fff;
-	z-index: 1;
+	z-index: 999;
 }
 
 .search-box{
 	position:absolute;
-	top: 120px;
+	top: 220px;
 	left: 120px;
 }
 .recommend-box{
 	position:absolute;
-	top: 340px;
+	top: 440px;
 	left: 120px;
 }
 
 #or{
+	font-size: 25px;
+	color: #fff;
+	z-index: 999;
 	text-align: center;	
-	margin-top: 250px;
+	margin-top: 50px;
+}
+
+.list-item img {
+	margin: 0px;
+	z-index: -1;
+	height: 200px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.list-item p {
+	z-index: 1;
+	font-size: 32px;
+	position: absolute;
+	top: 75px;
+	left: 120px;
+	display: block;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
 }
 </style>

@@ -10,6 +10,7 @@ var users = require('./routes/users');
 var login = require('./routes/login');
 var mysql = require('mysql');
 var choice = require('./routes/choice');
+var recommend = require('./routes/recommend');
 
 
 var app = express();
@@ -46,6 +47,7 @@ app.use('/', routes);
 app.use('/users', users);
 app.use('/login',login);
 app.use('/choice',choice);
+app.use('/recommend', recommend);
 
 
 // catch 404 and forward to error handler
