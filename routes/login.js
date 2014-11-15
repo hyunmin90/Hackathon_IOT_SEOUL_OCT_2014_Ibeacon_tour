@@ -76,6 +76,9 @@ router.get('/login_success', function(req, res) {
 
 });
 
+
+
+
 /*router.get('/login_success', ensureAuthenticated, function(req, res){
     console.log("login succedded!!!!");
     res.render('error', { title: 'Express' });
