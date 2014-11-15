@@ -30,7 +30,7 @@ btour.UI=
 	{	
 
 		$(".add").click(function(){
-			alert("hello");
+			
 			var url = "/choice";    
 			$(location).attr('href',url);
 
