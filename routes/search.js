@@ -9,7 +9,7 @@ router.get('/', function(req, res) {
 router.get('/location/:searchlocations', function(req, res) {
 
 	var location = req.params.searchLocation;
-	console.log(userid);
+	console.log(location);
 	var sql ='select location from carddata where location=?';
 	console.log(sql);
 	var query = dbcon.query(sql,[location],function(err,rows){
