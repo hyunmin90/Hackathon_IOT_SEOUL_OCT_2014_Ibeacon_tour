@@ -37,9 +37,9 @@ btour.UI=
 
 
 
-}
+};
 
-$(document).ready(function(){
+$(window).load(function(){
 	btour.UI.clickedevents();
 
-})
+});
