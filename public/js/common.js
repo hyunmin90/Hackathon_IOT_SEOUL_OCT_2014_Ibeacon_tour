@@ -73,25 +73,20 @@ btour.UI=
                     // start over again.
                     if (timeoutReference) clearTimeout(timeoutReference);
                     timeoutReference = setTimeout(function(){
+                    	alert("hello");
                         // if we made it here, our timeout has elapsed. Fire the
                         // callback
-                        btour.UI.doneTyping(el);
+                        doneTyping(el);
                     }, timeout);
                 }).on('blur',function(){
                     // If we can, fire the event since we're leaving the field
-                    btour.UI.doneTyping(el);
+                    doneTyping(el);
                 });
             });
         }
     });
 
 	},
-	doneTyping:function()
-	{
-
-		alert("hhh");
-
-	}
 
 	
   
