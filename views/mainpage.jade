@@ -9,23 +9,13 @@ html
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
     script(src='/js/common.js') 
   body
-   block content
 .header
     h2.col-xs-12 Btour
   .container.col-xs-12
     .profile
+      block content	
       img(alt='user' src= posts )
       p.col-xs-12 yuki
     .col-xs-12
-      button#Black(style='width: 25px; height: 25px; background-color: black;', type='submit', onclick='alert(\'You are clicking on me\');')
       a.add() +
     .cards.bs-docs-section.col-xs-12
-      .card(style='z-index: 1; background-color: rgba(169, 24, 253, 0.78);' )
-        span.delete(style='z-index: 1;', onclick='deleteCard()') -
-        h3 yonsama's House
-      .card(style='z-index: 2; background-color: rgba(24, 140, 253, 0.78); top: 70px;')
-        span.delete(style='z-index: 2;', onclick='deleteCard()') -
-        h3 Seoutl Museum of Art
-      .card(style='z-index: 3; border-bottom-color: rgba(183, 250, 232, 0.78); top: 140px;')
-        span.delete(style='z-index: 3;', onclick='deleteCard()') -
-        h3 Noryangjin Fisheries Wholesal Market
