@@ -5,6 +5,7 @@ btour.UI=
 	appendloginpage:function()
 	{	
 		var userid=$(".uin").attr("id");
+		var i=0;
 		request = $.ajax
 		({
         url: "http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/userdatas/"+userid+"/cards", 	//Json데이터를 받아올 주소 
@@ -13,7 +14,8 @@ btour.UI=
 	        success: function(results)
 	        {
 	        	while(results[i]!=null)
-	            {alert(results[i]);
+	            {
+	            	$(".pocket").append('<div class="passcard paper" style="margin-bottom: -100px;">'+results[i].location+'</div>');
 	            	i++;}
 	        }
 
@@ -56,5 +58,6 @@ btour.UI=
 $(document).ready(function(){
 	btour.UI.clickedevents();
 	btour.UI.locationcard();
+	btour.UI.appendloginpage();
 
 });
