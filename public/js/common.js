@@ -101,7 +101,7 @@ $(document).ready(function(){
 	btour.UI.clickedevents();
 	btour.UI.appendloginpage();
 	btour.UI.firesearch();
-	$('#example').donetyping(function(){
+	$('#search').donetyping(function(){
   	alert("event fired");
 });
 
