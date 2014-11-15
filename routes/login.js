@@ -5,6 +5,7 @@ var passport = require('passport')
     , FacebookStrategy = require('passport-facebook').Strategy;
 
 var userimage;
+var username;
 // serialize
 // 인증후 사용자 정보를 세션에 저장
 passport.serializeUser(function(user, done) {
@@ -20,7 +21,7 @@ passport.serializeUser(function(user, done) {
     
     
      userimage='http://graph.facebook.com/'+user.id+'/picture?type=normal';
-
+     username=user.displayName;
 
 
     //console.log(user);
@@ -72,7 +73,7 @@ passport.authenticate('facebook', {
 
 
 router.get('/login_success', function(req, res) {
-      res.render('mainpage', { title: 'mainpage',posts:userimage });
+      res.render('mainpage', { title: 'mainpage',posts:userimage,name:username });
 
 });
 
