@@ -17,6 +17,7 @@ btour.UI=
 	            {
 	            	$(".pocket").append('<div class="passcard paper">'+results[i].location+'</div>');
 	            	i++;}
+	            btour.UI.locationcard();
 	        }
 
 
@@ -57,7 +58,6 @@ btour.UI=
 
 $(document).ready(function(){
 	btour.UI.clickedevents();
-	btour.UI.locationcard();
 	btour.UI.appendloginpage();
 
 });
