@@ -8,8 +8,8 @@ html,body{overflow-x: hidden;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  z-index: -10;
 }
-
 
 #loginbutton {
 background-image: url(https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xap1/t39.2178-6/851558_575761415814161_1164808389_n.png);
@@ -26,3 +26,139 @@ button span {
   display: none;
 }
 
+div,.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, 
+.col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, 
+.col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, 
+.col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, 
+.col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, 
+.col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, 
+.col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+	margin:0;
+	padding:0;
+}
+.header h2 {
+	text-align: center;
+	background-color: rgb(99, 91, 211);
+	color: #fff;
+	margin: 0;
+	padding: 11px;
+}
+
+.profile img{
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+	margin-left: 150px;
+	margin-top: 18px;
+}
+.profile p{
+	text-align:center;
+	margin-top: 5px;
+	font-size: 22px;
+	color:#fff;
+	font-weight:bold;
+}
+.cards {
+	margin: 5px 5px 0 5px;
+}
+.cards .btn{
+	padding : 15px 0px;
+	border: 0px dashed #ddd;
+	width:100%;
+	font-size: small;
+	color: #777;
+}
+
+.cards .btn:active{
+	background-color: #fff;
+}
+
+.card {
+	margin: 5px;
+	background-color: rgba(253, 163, 24, 0.78);
+	border: 1px solid transparent;
+	box-shadow:0 1px 1px rgba(0,0,0,.05);
+	box-sizing: border-box;
+	border-radius: 15px;
+	height:150px;
+	padding-left: 10px;
+	color: #fff;
+	font-size: large;
+	position: absolute;
+	display: inline-block;
+	right: 13px;
+	left: -3px;	
+}
+
+.card h3{
+	margin-top:30px;
+	font-weight: bold;
+	text-align: center;
+}
+.add{
+	border-radius: 50px;
+	font-size: xx-large;
+	padding: 5px;
+	margin: 5px;
+	color:white;
+	z-index: 100000;
+}
+
+.delete{
+	font-size: xx-large;
+	float: right;
+	margin: 0px 10px 20px 0;
+}
+
+.choicecontainer{
+	background-image: url("http://cfile10.uf.tistory.com/image/1255560D4CADAB1CAD2443");
+	height: 700px;
+	z-index: -1;
+}
+
+.search-box p, .recommend-box p{
+	font-size: 25px;
+	color: #fff;
+	z-index: 999;
+}
+
+.search-box{
+	position:absolute;
+	top: 220px;
+	left: 120px;
+}
+.recommend-box{
+	position:absolute;
+	top: 440px;
+	left: 120px;
+}
+
+#or{
+	font-size: 25px;
+	color: #fff;
+	z-index: 999;
+	text-align: center;	
+	margin-top: 50px;
+}
+
+.list-item img {
+	margin: 0px;
+	z-index: -1;
+	height: 200px;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+.list-item p {
+	z-index: 1;
+	font-size: 32px;
+	position: absolute;
+	top: 75px;
+	left: 120px;
+	display: block;
+	color: #fff;
+	text-align: center;
+	font-weight: bold;
+}
+</style>

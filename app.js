@@ -11,6 +11,8 @@ var login = require('./routes/login');
 var mysql = require('mysql');
 var choice = require('./routes/choice');
 var userdatas = require('./routes/userdatas');
+var recommend = require('./routes/recommend');
+
 
 var app = express();
 
@@ -47,6 +49,8 @@ app.use('/users', users);
 app.use('/login',login);
 app.use('/choice',choice);
 app.use('/userdatas',userdatas);
+app.use('/recommend', recommend);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
