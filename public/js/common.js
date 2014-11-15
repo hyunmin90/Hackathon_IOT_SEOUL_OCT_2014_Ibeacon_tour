@@ -50,7 +50,7 @@ btour.UI=
 	},
 	firesearch:function()
 	{
-		$.fn.extend({
+		 $.fn.extend({
         donetyping: function(callback,timeout){
             timeout = timeout || 1e3; // 1 second default timeout
             var timeoutReference,
@@ -73,7 +73,6 @@ btour.UI=
                     // start over again.
                     if (timeoutReference) clearTimeout(timeoutReference);
                     timeoutReference = setTimeout(function(){
-                    	alert("hello");
                         // if we made it here, our timeout has elapsed. Fire the
                         // callback
                         doneTyping(el);
@@ -102,5 +101,8 @@ $(document).ready(function(){
 	btour.UI.clickedevents();
 	btour.UI.appendloginpage();
 	btour.UI.firesearch();
+	$('#example').donetyping(function(){
+  	$('#example-output').text('Event last fired @ ' + (new Date().toUTCString()));
+});
 
 });
