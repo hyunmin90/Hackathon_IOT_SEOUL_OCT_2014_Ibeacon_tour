@@ -37,6 +37,7 @@ div,.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2,
 	padding:0;
 }
 .header h2 {
+	font-family: "Pacifico";
 	text-align: center;
 	background-color: rgb(99, 91, 211);
 	color: #fff;
