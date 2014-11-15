@@ -33,7 +33,20 @@ btour.UI=
 
 		});
 
+	},
+	locationcard:function()
+	{
+		$('.passcard').hover(function(){
+	      $(this).stop(false,false).animate({'margin-bottom':'-100px'},400)
+	    },function(){
+	      $(this).stop(false,false).animate({'margin-bottom':'-320px'},400)
+	    })
+
+
 	}
+
+
+
 
 
 
@@ -41,5 +54,6 @@ btour.UI=
 
 $(document).ready(function(){
 	btour.UI.clickedevents();
+	btour.UI.locationcard();
 
 });
