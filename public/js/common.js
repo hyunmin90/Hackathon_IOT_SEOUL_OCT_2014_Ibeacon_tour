@@ -15,7 +15,7 @@ btour.UI=
 	        {
 	        	while(results[i]!=null)
 	            {
-	            	$(".pocket").append('<div class="passcard paper" style="margin-bottom: -100px;">'+results[i].location+'</div>');
+	            	$(".pocket").append('<div class="passcard paper">'+results[i].location+'</div>');
 	            	i++;}
 	        }
 
