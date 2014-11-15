@@ -89,14 +89,13 @@ btour.UI=
 
 	doneTyping:function(){
 		var searchterm= $("#search").val();
-		request = $.ajax
-							({
+		request = $.ajax({
         						url: "http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/search/location/"+searchterm, 	//Json데이터를 받아올 주소 
         						type: "get",
         						dataType:"json",
 	       							success: function(results)
 	        						{
-	        							$("#searchteditem").append("<div onclick='location.href='/recommend/shopping'' class='list-item col-xs-12'><img alt='shopping' src="+results[0].imageURL+"><p>SHOPPING</p></div>");
+	        							$("#searcheditem").append("<div onclick='location.href='/recommend/shopping'' class='list-item col-xs-12'><img alt='shopping' src="+results[0].imageURL+"><p>"+results[0].location+"</p></div>");
 	        						}
     						});
 
