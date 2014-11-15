@@ -75,11 +75,11 @@ btour.UI=
                     timeoutReference = setTimeout(function(){
                         // if we made it here, our timeout has elapsed. Fire the
                         // callback
-                        btour.UI.doneTyping();
+                        doneTyping(el);
                     }, timeout);
                 }).on('blur',function(){
                     // If we can, fire the event since we're leaving the field
-                    btour.UI.doneTyping();
+                    doneTyping(el);
                 });
             });
         }
@@ -88,17 +88,9 @@ btour.UI=
 	},
 
 	doneTyping:function(){
-		var searchterm= $("#search").val();
-		request = $.ajax
-							({
-        						url: "http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/search/location"+searchterm, 	//Json데이터를 받아올 주소 
-        						type: "get",
-        						dataType:"json",
-	       							success: function(results)
-	        						{
-	        						alert(results.imageURL);
-	        						}
-    						});
+	
+  		alert('Event last fired @ ' + (new Date().toUTCString()));
+
 
 	}
 
