@@ -2,8 +2,9 @@ var btour={};
 
 btour.UI=
 {
-	appendloginpage:function(userid)
-	{
+	appendloginpage:function()
+	{	
+		var userid=$(".uin").attr("id");
 		request = $.ajax
 		({
         url: "http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/userdatas/"+userid+"/cards", 	//Json데이터를 받아올 주소 
