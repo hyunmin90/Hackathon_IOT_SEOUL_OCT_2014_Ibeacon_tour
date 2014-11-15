@@ -2,7 +2,7 @@ html,body{overflow-x: hidden;
     overflow-y: auto;}
 
 #searchpage{
-  background: url(/image/searchpage.jpg) no-repeat center center fixed; 
+  background:rgba(255, 255, 255, .5) url(/image/searchpage.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
@@ -12,7 +12,7 @@ html,body{overflow-x: hidden;
 
 }
 #loadingpage { 
-  background: rgba(255, 255, 255, .5) url(/image/mainpage-1.jpg) no-repeat center center fixed; 
+  background:url(/image/mainpage-1.jpg) no-repeat center center fixed; 
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
