@@ -96,7 +96,7 @@ btour.UI=
         						dataType:"json",
 	       							success: function(results)
 	        						{
-	        						alert(results.imageURL);
+	        							$("#searchteditem").append("<div onclick='location.href='/recommend/shopping'' class='list-item col-xs-12'><img alt='shopping' src="+results[0].imageURL+"><p>SHOPPING</p></div>");
 	        						}
     						});
 
