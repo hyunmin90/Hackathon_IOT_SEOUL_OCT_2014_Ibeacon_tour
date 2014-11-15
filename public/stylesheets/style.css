@@ -11,7 +11,7 @@ body {
 }
 
 
-button {
+#loginbutton {
 background-image: url(https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xap1/t39.2178-6/851558_575761415814161_1164808389_n.png);
 background-repeat: no-repeat;
 background-position: 50% 50%;
