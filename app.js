@@ -14,7 +14,7 @@ var choice = require('./routes/choice');
 var userdatas = require('./routes/userdatas');
 var recommend = require('./routes/recommend');
 var search = require('./routes/search');
-
+var translate = require('./routes/translate');
 
 var app = express();
 
@@ -54,7 +54,7 @@ app.use('/userdatas',userdatas);
 app.use('/recommend', recommend);
 app.use('/search',search);
 app.use('/spotInfo', spotInfo);
-
+app.use('/translate',translate);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
     var err = new Error('Not Found');
