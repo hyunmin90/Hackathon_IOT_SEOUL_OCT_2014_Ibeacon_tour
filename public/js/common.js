@@ -24,8 +24,9 @@ btour.UI=
 	},
 	clickedevents:function()
 	{	
-		alert("hello");
+
 		$(".add").click(function(){
+			alert("hello");
 			var url = "/choice";    
 			$(location).attr('href',url);
 
