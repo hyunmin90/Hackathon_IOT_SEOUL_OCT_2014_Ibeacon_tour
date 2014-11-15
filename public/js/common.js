@@ -87,12 +87,12 @@ btour.UI=
 
 	},
 
-	doneTyping:function(){
+
 	
-  		alert('Event last fired @ ' + (new Date().toUTCString()));
-
-
-	}
+  		$('#search').donetyping(function(){
+  				alert('Event last fired @ ' + (new Date().toUTCString()));
+				});
+	
 
 
 
