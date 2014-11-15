@@ -1,26 +1,29 @@
 html
   head
+    meta(name='viewport', content='width=device-width, initial-scale=1', charset='utf-8')
+    title
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
     script(type='text/javascript', src='http://code.jquery.com/jquery-2.1.0.min.js')
     script(src='//code.jquery.com/ui/1.11.2/jquery-ui.js')
-    script(src='/js/common.js') 
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
   body
-.header
-    h2.col-xs-12 Btour
-  .container.col-xs-12
-    .profile
-      img(alt='user' src= posts )
-      p.col-xs-12 yuki
-    .col-xs-12
-      a.add() +
-    .cards.bs-docs-section.col-xs-12
-      .card(style='z-index: 1; background-color: rgba(169, 24, 253, 0.78);' )
-        span.delete(style='z-index: 1;', onclick='deleteCard()') -
-        h3 yonsama's House
-      .card(style='z-index: 2; background-color: rgba(24, 140, 253, 0.78); top: 70px;')
-        span.delete(style='z-index: 2;', onclick='deleteCard()') -
-        h3 Seoutl Museum of Art
-      .card(style='z-index: 3; border-bottom-color: rgba(183, 250, 232, 0.78); top: 140px;')
-        span.delete(style='z-index: 3;', onclick='deleteCard()') -
-        h3 Noryangjin Fisheries Wholesal Market
+   block content
+    .header
+        h2.col-xs-12 Btour
+      .container.col-xs-12
+        .profile
+          img(alt='user' src= posts )
+          p.col-xs-12 yuki
+        .col-xs-12
+          p.add(onclick='location.href=\'/choice\'') +
+        .cards.bs-docs-section.col-xs-12
+          .card(style='z-index: 1; background-color: rgba(169, 24, 253, 0.78);' )
+            span.delete(style='z-index: 1;', onclick='deleteCard()') -
+            h3 yonsama's House
+          .card(style='z-index: 2; background-color: rgba(24, 140, 253, 0.78); top: 70px;')
+            span.delete(style='z-index: 2;', onclick='deleteCard()') -
+            h3 Seoutl Museum of Art
+          .card(style='z-index: 3; border-bottom-color: rgba(183, 250, 232, 0.78); top: 140px;')
+            span.delete(style='z-index: 3;', onclick='deleteCard()') -
+            h3 Noryangjin Fisheries Wholesal Market
