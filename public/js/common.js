@@ -87,7 +87,20 @@ btour.UI=
 
 	},
 
-	
+	doneTyping:function(){
+		var searchterm= $("#search").val();
+		request = $.ajax
+							({
+        						url: "http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/search/location"+searchterm, 	//Json데이터를 받아올 주소 
+        						type: "get",
+        						dataType:"json",
+	       							success: function(results)
+	        						{
+	        						alert(results.imageURL);
+	        						}
+    						});
+
+	}
   
 
 
@@ -102,7 +115,7 @@ $(document).ready(function(){
 	btour.UI.appendloginpage();
 	btour.UI.firesearch();
 	$('#search').donetyping(function(){
-  	alert("event fired");
+  	btour.UI.doneTyping90;
 });
 
 });
