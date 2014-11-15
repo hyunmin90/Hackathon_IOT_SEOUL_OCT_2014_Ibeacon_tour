@@ -6,6 +6,7 @@ var passport = require('passport')
 
 var userimage;
 var username;
+var uin;
 // serialize
 // 인증후 사용자 정보를 세션에 저장
 passport.serializeUser(function(user, done) {
@@ -22,7 +23,7 @@ passport.serializeUser(function(user, done) {
     
      userimage='http://graph.facebook.com/'+user.id+'/picture?type=normal';
      username=user.displayName;
-
+     uin=user.id;
 
     //console.log(user);
     //console.log(user.last_name);
@@ -73,7 +74,7 @@ passport.authenticate('facebook', {
 
 
 router.get('/login_success', function(req, res) {
-      res.render('mainpage', { title: 'mainpage',posts:userimage,name:username });
+      res.render('mainpage', { title: 'mainpage',posts:userimage,name:username,uin:uin });
 
 });
 
