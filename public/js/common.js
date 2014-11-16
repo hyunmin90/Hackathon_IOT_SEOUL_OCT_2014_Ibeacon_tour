@@ -40,13 +40,17 @@ btour.UI=
 		$(".mapBtnGrounp").click(function(e){
 
 			var btnName = $(e.target).attr('id');
-			console.log(btnName);
-			if(btnName='mapBtn1'){
+			var location = $('#location').text();
 
-				//$('#mapIframe').attr('src','http://maps.google.com/maps?q='+location+'&output=embed&hl=en');
+			console.log(btnName);
+
+			if(btnName=='mapBtn1'){
+				$('#mapIframe').attr('src','http://maps.google.com/maps?q='+location+'&output=embed&hl=en');
+			}
+			else if(btnName=='mapBtn2'){
+				$('#mapIframe').attr('src','http://dna.daum.net/include/tools/routemap/map_view.php?width=360&height=360&latitude=37.718695611566346&longitude=128.83204123821244&contents=&zoom=4');
 			}
 		});
-
 	},
 	locationcard:function()
 	{
