@@ -3,7 +3,7 @@ var router = express.Router();
 
 router.get('/:uin', function(req, res) {
 	var uin=req.params.uin;
-	res.render('searchpage', { title: 'searchpage',UIN: uin});
+	res.render('searchpage', { title: 'searchpage',uin: uin});
 });
 
 router.get('/location/:searchlocations/', function(req, res) {
