@@ -9,16 +9,17 @@ html
     script(src='/js/jquery-ui.js')    	
     script(src='/js/bootstrap.min.js')
     script(src='/js/common.js')
-  body
+  body(onload='btour.UI.mapGenerate();')
     .header
         h2.col-xs-12 Btour
           .container.col-xs-12
   div(width='100%', height='30%')
-    h2.enlocation.col-xs-12(style='text-align: center; padding: 25px; font-weight: bold; color: aliceblue;') #{enlocation}
+    h2#enlocation.enlocation.col-xs-12(style='text-align: center; padding: 25px; font-weight: bold; color: aliceblue;') #{enlocation}
     h3#krlocation.col-xs-12.hide #{krlocation}
   div
-    iframe#mapIframe(width='100%', height='65%', scrolling='no', frameborder='0' marginheight='0', marginwidth='0' src='http://dna.daum.net/include/tools/routemap/map_view.php?width=360&height=360&latitude=37.718695611566346&longitude=128.83204123821244&contents=&zoom=4')
-    //iframe#mapIframe(width='100%', height='67%', frameborder='0', scrolling='no', marginheight='0', marginwidth='0', src='http://maps.google.com/maps?q='+enlocation+'&output=embed&hl=en')
+
+    //iframe#mapIframe(width='100%', height='65%', scrolling='no', frameborder='0' marginheight='0', marginwidth='0' src='http://dna.daum.net/include/tools/routemap/map_view.php?width=360&height=360&latitude=37.718695611566346&longitude=128.83204123821244&contents=&zoom=4')
+    iframe#mapIframe(width='100%', height='50%', frameborder='0', scrolling='no', marginheight='0', marginwidth='0')
     //input#mapBtn1(width='50', height='20' type='image' style='margin-top: auto' src='./image/daum-logo.jpg')
     .mapBtnGrounp.map.btn-group.col-xs-12(role='group', aria-label='...' style='margin-top: 2px;')
       button#mapBtn1.col-xs-6.btn.btn-primary.btn-group-lg(type='button')

@@ -57,7 +57,7 @@ btour.UI=
 			var enlocation = $('#enlocation').text();
 			var krlocation = $('#krlocation').text();
 
-			console.log(btnName);
+			console.log('enlocation'+enlocation);
 			//구글
 			if(btnName=='mapBtn1'){
 				$('#mapIframe').attr('src','http://maps.google.com/maps?q='+enlocation+'&output=embed&hl=en');
@@ -176,6 +176,10 @@ btour.UI=
 	        						}
     						});
 
+	},
+	mapGenerate: function(){
+		var l = document.getElementById('mapBtn2');
+		l.click();
 	}
   
 
