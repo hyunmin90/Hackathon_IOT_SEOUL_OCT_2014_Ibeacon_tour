@@ -32,7 +32,7 @@ router.get('/getTourSpotInfo', function(req, res) {
 					}, function(err, response) {
 						var value = JSON.parse(response.body);
 						var tmDescript_EN = value.data.translations[0].translatedText;
-						
+
 						request({ method: 'GET',
 								  url: 'https://apis.daum.net/local/v1/search/keyword?apikey=DAUM_LOCAL_DEMO_APIKEY&image=only&query='+encodeURIComponent(tmName),
 						}, function(err, response) {

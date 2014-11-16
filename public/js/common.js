@@ -30,12 +30,21 @@ btour.UI=
 	{	
 
 		$(".add").click(function(){
-			
-			var url = "/choice";    
+			var userid=$(".uin").attr("id");
+			var url = "/choice/"+userid;    
 			$(location).attr('href',url);
 
 
 		});
+		$("#searchicon").click(function(){
+			alert("clicked");
+			var userid=$("#userid").attr("src");
+			var url = "/search/"+userid;    
+			$(location).attr('href',url);
+
+		});
+
+
 
 		$(".mapBtnGrounp").click(function(e){
 
@@ -120,18 +129,37 @@ btour.UI=
 	},
 
 	doneTyping:function(){
+		var uin=$(".uin").attr("src");
 		var searchterm= $("#search").val();
 		request = $.ajax({
         						url: "http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/search/location/"+searchterm, 	//Json데이터를 받아올 주소 
         						type: "get",
         						dataType:"json",
 	       							success: function(results)
-	        						{
-	        							$("#searcheditem").append("<div onclick='location.href='/recommend/shopping'' class='list-item col-xs-12'><img alt='shopping' src="+results[0].imageURL+"><p>"+results[0].location+"</p></div>");
+	        						{	
+	        							$(".spotcards").remove();
+	        							var i =0;
+	        							while(results[i]!=null)
+	        							{	
+	        								$("#searcheditem").append("<div class='list-item col-xs-12 spotcards'><img alt='shopping' src="+results[i].imageURL+" href='/userdatas/"+uin+"/"+results[i].location+"/addspotcard/"+"'><p>"+results[i].location+"</p></div>");
+	        								i++;
+	        							}
 	        						}
     						});
 
 	},
+	removediv:function()
+	{
+
+
+
+	}
+  
+
+
+
+
+
 };
 
 $(document).ready(function(){
