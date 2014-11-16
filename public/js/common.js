@@ -29,6 +29,10 @@ btour.UI=
 	},
 	clickedevents:function()
 	{	
+		$(".spotcards").click(function(){
+			alert("hello");
+
+		});
 
 		$(".add").click(function(){
 			var userid=$(".uin").attr("id");
@@ -147,12 +151,6 @@ btour.UI=
 	        							}
 	        						}
     						});
-
-	},
-	clickspotcardfromsearch:function()
-	{
-		
-
 
 	}
   
