@@ -43,11 +43,12 @@ background-position: 50% 50%;
 border: none;
 height: 64px;
 width: 311px;
+margin-top: 400px;
 }
 #loginbutton.displayed{
 	display: block;
 	margin-right: auto;
-	margin-left: auto;
+	margin-left: auto
 }
 
 
