@@ -149,6 +149,15 @@ btour.UI=
 	        								$("#searcheditem").append("<div class='list-item col-xs-12 spotcards'><img alt='shopping' src="+results[i].imageURL+" href='/userdatas/"+uin+"/"+results[i].location+"/addspotcard/"+"'><p>"+results[i].location+"</p></div>");
 	        								i++;
 	        							}
+	        							$(".spotcards").click(function(){
+										alert("hello");
+
+										});
+
+
+
+
+
 	        						}
     						});
 
