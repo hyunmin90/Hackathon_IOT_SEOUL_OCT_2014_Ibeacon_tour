@@ -60,11 +60,15 @@ btour.UI=
 			console.log('enlocation'+enlocation);
 			//구글
 			if(btnName=='mapBtn1'){
-				$('#mapIframe').attr('src','http://maps.google.com/maps?q='+enlocation+'&output=embed&hl=en');
+				console.log(1);
+				$('#mapIframe_google').removeClass('hide');//.show();
+				$('#mapIframe_daum').addClass('hide');//.hide();
 			}
 			//다음
 			else if(btnName=='mapBtn2'){
-
+				console.log(2);
+				$('#mapIframe_google').addClass('hide');//.hide();
+				$('#mapIframe_daum').removeClass('hide');//.show();
 				//ajax로 경도 위도
 				$.ajax({
 	                url:'/map/getLatLng?location='+encodeURIComponent(krlocation),
@@ -73,7 +77,7 @@ btour.UI=
 	                {	
 	                	var jsonResult = JSON.parse(result.responseText);
 	                	console.log('/map/Iframe?Lat='+jsonResult.Lat+'&Lng='+jsonResult.Lng);
-                  		$('#mapIframe').attr('src','/map/Iframe?Lat='+jsonResult.Lat+'&Lng='+jsonResult.Lng);
+                  		$('#mapIframe_daum').attr('src','/map/Iframe?Lat='+jsonResult.Lat+'&Lng='+jsonResult.Lng);
                     },
 	                error : function()
 	                {
