@@ -120,11 +120,11 @@ btour.UI=
         						dataType:"json",
 	       							success: function(results)
 	        						{	
-	        							$(".card").remove();
+	        							$(".spotcards").remove();
 	        							var i =0;
 	        							while(results[i]!=null)
 	        							{	
-	        								$("#searcheditem").append("<div class='list-item col-xs-12 card'><img alt='shopping' src="+results[i].imageURL+" href='/userdatas/"+uin+"/"+results[i].location+"/addspotcard/"+"'><p>"+results[i].location+"</p></div>");
+	        								$("#searcheditem").append("<div class='list-item col-xs-12 spotcards'><img alt='shopping' src="+results[i].imageURL+" href='/userdatas/"+uin+"/"+results[i].location+"/addspotcard/"+"'><p>"+results[i].location+"</p></div>");
 	        								i++;
 	        							}
 	        						}
