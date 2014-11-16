@@ -32,19 +32,7 @@ btour.UI=
 		$(".spotcards").click(function(){
 			var location=$(this).attr("id");
 			var uin=$(".uin").attr("src");
-			var url = "/userdatas/"+uin+"/"+location+"/addspotcard";
-			
-			request = $.ajax
-			({
-       		url: url, 	//Json데이터를 받아올 주소 
-        	type: "get",
-        	dataType:"json",
-	        success: function(results)
-	        {	alert("spotcard has been added");
-	        	$(location).attr('href',"http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/login/login_success");
-	        }
-
-    		});
+			var url = "/userdatas/"+uin+"/"+location+"/addspotcard"; 
 
 		});
 
@@ -159,9 +147,9 @@ btour.UI=
 	        							$(".spotcards").remove();
 	        							var i =0;
 	        							while(results[i]!=null)
-	        							{	$("#searcheditem").append("<div id="results[i].location" class='list-item col-xs-12 spotcards'><img alt='shopping' src="+results[i].imageURL+" href='/userdatas/"+uin+"/"+results[i].location+"/addspotcard/"+"'><p>"+results[i].location+"</p></div>");
+	        							{	
+	        								$("#searcheditem").append("<div id="results[i].location" class='list-item col-xs-12 spotcards'><img alt='shopping' src="+results[i].imageURL+"><p>"+results[i].location+"</p></div>");
 	        								i++;
-	        								
 	        							}
 	        						}
     						});
