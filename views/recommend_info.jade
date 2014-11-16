@@ -4,19 +4,15 @@ html
     title
     link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css')
     link(rel='stylesheet', href='/stylesheets/style.css')
-    link(href='//fonts.googleapis.com/css?family=Pacifico:400', rel='stylesheet', type='text/css')
     script(type='text/javascript', src='http://code.jquery.com/jquery-2.1.0.min.js')
     script(src='//code.jquery.com/ui/1.11.2/jquery-ui.js')
-    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
-  
-
-    script(src='/js/common.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
-  body#searchpage
+  body
     .header
       h2.col-xs-12 Btour
-    ul.nav.navbar-default
-      span#searchicon.glyphicon.glyphicon-search(aria-hidden="true")
-      input#search.form-control(placeholder="search",type="text")
-
-    .list-container.col-xs-12#searcheditem      
+    block content
+          each item in array
+            .list-container.col-xs-12
+              .list-item.col-xs-12(id=item.mapUrl onclick='location.href=\'/map?krlocation=#{item.mapUrl}&enlocation=#{item.location}\'') 
+                img(alt='', src=item.imageUrl)
+                p=item.location

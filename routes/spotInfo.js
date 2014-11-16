@@ -16,7 +16,7 @@ router.get('/getTourSpotInfo', function(req, res) {
 		var SEQ = rows[0].seq;
 		console.log(err);
 
-		/*request({ method: 'GET',
+		request({ method: 'GET',
 					url: 'http://openapi.jejutour.go.kr:8080/openapi/service/TourMapService/getTourMapView?_type=json&ServiceKey='+ServiceKey+'&SEQ='+SEQ,
 				}, function(err, response) {
 					var value = JSON.parse(response.body);
@@ -24,26 +24,24 @@ router.get('/getTourSpotInfo', function(req, res) {
 					console.log(tmName);
 
 					var tmDescript = value.response.body.items.item.tmDescript;
-		*/
-					var tmDescript = '안녕하세요';
 
 					request({ method: 'GET',
 							  url: 'https://www.googleapis.com/language/translate/v2?key=AIzaSyANiZ1tyl7-Hj_OmvNrgg0J9k_dEUh52tU&source=ko&target=en&q='+encodeURIComponent(tmDescript),
 					}, function(err, response) {
 						var value = JSON.parse(response.body);
 					//	res.json(value.data.translations[0].translatedText);
-						res.render('spotinfopage', { title: 'mainpage',tmName:tmName, tmDescript:tmDescript, imageUrl:imageUrl});
-
-						/*
+						
+						
 						request({ method: 'GET',
 								  url: 'https://apis.daum.net/local/v1/search/keyword?apikey=DAUM_LOCAL_DEMO_APIKEY&image=only&query='+encodeURIComponent(tmName),
 						}, function(err, response) {
 							var DaumValue = JSON.parse(response.body);
 							var imageUrl = DaumValue.channel.item[0].imageUrl;
 							res.json({tmName:tmName, tmDescript:tmDescript, imageUrl:imageUrl});
-						});*/
+//							res.render('spotinfopage', { title: 'mainpage',tmName:tmName, tmDescript:tmDescript, imageUrl:imageUrl});
+						});
 					});
-				//});
+				});
 	});
 });
 
