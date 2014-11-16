@@ -141,6 +141,11 @@ div,.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2,
 	background: transparent;
 }
 
+#enlocation{
+	font-weight: bold;
+	text-align: center;
+}
+
 .choicecontainer{
 	background-image: url("http://cfile10.uf.tistory.com/image/1255560D4CADAB1CAD2443");
 	height: 700px;
