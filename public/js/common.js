@@ -159,9 +159,9 @@ btour.UI=
 	        							$(".spotcards").remove();
 	        							var i =0;
 	        							while(results[i]!=null)
-	        							{	$("#searcheditem").append("<div id="results[i].location" class='list-item col-xs-12 spotcards'><img alt='shopping' src='"+results[i].imageURL+"'><p>"+results[i].location+"</p></div>");
-	        							
+	        							{	$("#searcheditem").append("<div id="results[i].location" class='list-item col-xs-12 spotcards'><img alt='shopping' src="+results[i].imageURL+" href='/userdatas/"+uin+"/"+results[i].location+"/addspotcard/"+"'><p>"+results[i].location+"</p></div>");
 	        								i++;
+	        								
 	        							}
 	        						}
     						});
