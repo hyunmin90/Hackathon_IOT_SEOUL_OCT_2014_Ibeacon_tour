@@ -9,17 +9,19 @@ var apikey='';
 router.get('/getTourSpotInfo', function(req, res) {
 
 	var uuid = req.param("uuid").toUpperCase();
-	var sql ='select seq from uuidbridgeseq where uuid=?';
+	var sql ='select seq, location from carddata where uuid=?';
 	var query = dbcon.query(sql,[uuid],function(err,rows){
 
 		console.log(err);
 		var SEQ = rows[0].seq;
+		var location_EN = rows[0].location;
 		console.log(err);
 
 		request({ method: 'GET',
 					url: 'http://openapi.jejutour.go.kr:8080/openapi/service/TourMapService/getTourMapView?_type=json&ServiceKey='+ServiceKey+'&SEQ='+SEQ,
 				}, function(err, response) {
 					var value = JSON.parse(response.body);
+
 					var tmName = value.response.body.items.item.tmName;
 					console.log(tmName);
 
@@ -36,13 +38,10 @@ router.get('/getTourSpotInfo', function(req, res) {
 						}, function(err, response) {
 							var DaumValue = JSON.parse(response.body);
 							var imageUrl = DaumValue.channel.item[0].imageUrl;
-							res.json({tmName:tmName, tmDescript:tmDescript_EN, imageUrl:imageUrl});
+							res.json({tmName:location_EN, tmDescript:tmDescript_EN, imageUrl:imageUrl});
 						});
 					});
 				});
 	});
 });
-
-//https://www.googleapis.com/language/translate/v2?key=AIzaSyANiZ1tyl7-Hj_OmvNrgg0J9k_dEUh52tU&source=ko&target=en&callback=translateText&q=%EC%95%88%EB%85%95%ED%95%98%EC%84%B8%EC%9A%94
-
 module.exports = router;
