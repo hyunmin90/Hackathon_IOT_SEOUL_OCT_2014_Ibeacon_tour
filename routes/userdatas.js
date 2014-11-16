@@ -15,8 +15,6 @@ router.get('/:uin/cards', function(req, res) { //유저가 가지고있는 Locat
 router.get('/:uin/:locationame/addspotcard/', function(req, res) { //유저가 가지고있는 Location정보 
 	var location = req.params.locationame;
 	console.log(location);
-	
-	var sql ='SELECT c.id AS id,c.seq AS seq,c.imageUrl AS imageUrl, c.mapUrl AS mapUrl, c.location AS location FROM carddata c JOIN userlocationcard l ON c.id = l.location_id WHERE l.uin =?';
 	console.log(sql);
 	var query = dbcon.query(sql,[userid],function(err,rows){
 		console.log(rows);
