@@ -42,7 +42,6 @@ btour.UI=
 
 		});
 		$("#searchicon").click(function(){
-			alert("clicked");
 			var userid=$("#userid").attr("src");
 			var url = "/search/"+userid;    
 			$(location).attr('href',url);
@@ -146,11 +145,20 @@ btour.UI=
 	        							var i =0;
 	        							while(results[i]!=null)
 	        							{	
-	        								$("#searcheditem").append("<div class='list-item col-xs-12 spotcards'><img alt='shopping' src="+results[i].imageURL+" href='/userdatas/"+uin+"/"+results[i].location+"/addspotcard/"+"'><p>"+results[i].location+"</p></div>");
+	        								$("#searcheditem").append("<div class='list-item col-xs-12 spotcards' id="+results[i].location+"><img alt='shopping' src="+results[i].imageURL+" href='/userdatas/"+uin+"/"+results[i].location+"/addspotcard/"+"'><p>"+results[i].location+"</p></div>");
 	        								i++;
 	        							}
 	        							$(".spotcards").click(function(){
-										alert("hello");
+												var location=$(this).attr(id);
+												$.ajax({
+	                								url:'/userdatas/'+uin+'/'+location+'/addspotcard/',
+										                type:'GET',
+										                success:function(result)
+										                {	
+										                	   
+															$(location).attr('href',"http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/login/login_success");
+									                    }
+										            });	
 
 										});
 
