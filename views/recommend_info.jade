@@ -12,8 +12,8 @@ html
       h2.col-xs-12 Btour
     block content
           each item in array
-            .list-container.col-xs-12
-              .list-item.col-xs-12(id=item.mapUrl onclick='location.href=\'/userdatas/#{uin}/#{item.location}/addspotcard\'') 
+            .list-container.col-xs-12#searcheditem
+              .list-item.col-xs-12.spotcards(id=item.location onclick='location.href=\'/userdatas/#{uin}/#{item.location}/addspotcard\'') 
                 img(alt='', src=item.imageUrl)
                 p=item.location
         
