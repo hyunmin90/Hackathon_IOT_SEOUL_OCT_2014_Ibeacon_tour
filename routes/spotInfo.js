@@ -31,6 +31,7 @@ router.get('/getTourSpotInfo', function(req, res) {
 						var DaumValue = JSON.parse(response.body);
 						var imageUrl = DaumValue.channel.item[0].imageUrl;
 						res.json({tmName:tmName, tmDescript:tmDescript, imageUrl:imageUrl});
+						res.render('spotinfopage', { title: 'mainpage',tmName:tmName, tmDescript:tmDescript, imageUrl:imageUrl});
 					});
 				});
 	});
