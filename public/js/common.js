@@ -16,7 +16,7 @@ btour.UI=
 	        	console.log(results)
 	        	while(results[i]!=null)
 	            {
-	            	var randomcolor = 'rgb(' + (Math.floor(Math.random()*256)) + ',' + (Math.floor(Math.random()*256)) + ','+ (Math.floor(Math.random()*256))+',0.57)';
+	            	var randomcolor = 'rgba(' + (Math.floor(Math.random()*256)) + ',' + (Math.floor(Math.random()*256)) + ','+ (Math.floor(Math.random()*256))+',0.57)';
 	            	$(".pocket").append('<div class ="passcard paper" onclick="location.href=\'/map?krlocation='+results[i].mapUrl+"&enlocation="+results[i].location+'\'"  style="background-color:'+randomcolor+'">'+results[i].location+'<a class="delete" style="color:#fff;"><h1>-</h1></a></div>');
 	            	i++;}
 	            btour.UI.locationcard();
@@ -60,15 +60,11 @@ btour.UI=
 			console.log('enlocation'+enlocation);
 			//구글
 			if(btnName=='mapBtn1'){
-				console.log(1);
-				$('#mapIframe_google').removeClass('hide');//.show();
-				$('#mapIframe_daum').addClass('hide');//.hide();
+				$('#mapIframe').attr('src','http://maps.google.com/maps?q='+enlocation+'&output=embed&hl=en');
 			}
 			//다음
 			else if(btnName=='mapBtn2'){
-				console.log(2);
-				$('#mapIframe_google').addClass('hide');//.hide();
-				$('#mapIframe_daum').removeClass('hide');//.show();
+
 				//ajax로 경도 위도
 				$.ajax({
 	                url:'/map/getLatLng?location='+encodeURIComponent(krlocation),
@@ -77,7 +73,7 @@ btour.UI=
 	                {	
 	                	var jsonResult = JSON.parse(result.responseText);
 	                	console.log('/map/Iframe?Lat='+jsonResult.Lat+'&Lng='+jsonResult.Lng);
-                  		$('#mapIframe_daum').attr('src','/map/Iframe?Lat='+jsonResult.Lat+'&Lng='+jsonResult.Lng);
+                  		$('#mapIframe').attr('src','/map/Iframe?Lat='+jsonResult.Lat+'&Lng='+jsonResult.Lng);
                     },
 	                error : function()
 	                {
