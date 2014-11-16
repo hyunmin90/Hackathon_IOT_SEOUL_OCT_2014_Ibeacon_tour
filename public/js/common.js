@@ -95,7 +95,12 @@ btour.UI=
         						dataType:"json",
 	       							success: function(results)
 	        						{
-	        							$("#searcheditem").append("<div onclick='location.href='/recommend/shopping'' class='list-item col-xs-12'><img alt='shopping' src="+results[0].imageURL+"><p>"+results[0].location+"</p></div>");
+	        							var i =0;
+	        							while(results[i]!=null)
+	        							{
+	        								$("#searcheditem").append("<div onclick='location.href='/recommend/shopping'' class='list-item col-xs-12'><img alt='shopping' src="+results[i].imageURL+"><p href='/map?location="+results[i].location+"'>"+results[i].location+"</p></div>");
+	        								i++;
+	        							}
 	        						}
     						});
 
