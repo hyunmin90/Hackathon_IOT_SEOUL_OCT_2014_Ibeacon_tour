@@ -38,9 +38,8 @@ btour.UI=
 			var userid=$(".uin").attr("id");
 			var url = "/choice/"+userid;    
 			$(location).attr('href',url);
-
-
 		});
+
 		$("#searchicon").click(function(){
 			var userid=$("#userid").attr("src");
 			var url = "/search/"+userid;    
@@ -52,10 +51,7 @@ btour.UI=
 			var userid=$("#userid").attr("src");
 			var url = "/recommend/"+userid;    
 			$(location).attr('href',url);
-
 		});
-
-
 
 		$(".mapBtnGrounp").click(function(e){
 
