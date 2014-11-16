@@ -37,6 +37,16 @@ btour.UI=
 
 		});
 
+		$(".mapBtnGrounp").click(function(e){
+
+			var btnName = $(e.target).attr('id');
+			console.log(btnName);
+			if(btnName='mapBtn1'){
+
+				//$('#mapIframe').attr('src','http://maps.google.com/maps?q='+location+'&output=embed&hl=en');
+			}
+		});
+
 	},
 	locationcard:function()
 	{
@@ -47,11 +57,7 @@ btour.UI=
 	    })
 
 
-	}
-
-
-
-
+	},
 
 
 };

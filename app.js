@@ -13,6 +13,7 @@ var mysql = require('mysql');
 var choice = require('./routes/choice');
 var userdatas = require('./routes/userdatas');
 var recommend = require('./routes/recommend');
+var map = require('./routes/map');
 
 
 var app = express();
@@ -52,6 +53,7 @@ app.use('/choice',choice);
 app.use('/userdatas',userdatas);
 app.use('/recommend', recommend);
 app.use('/spotInfo', spotInfo);
+app.use('/map', map);
 
 
 // catch 404 and forward to error handler
