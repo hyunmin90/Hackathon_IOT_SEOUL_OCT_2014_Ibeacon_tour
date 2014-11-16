@@ -16,13 +16,8 @@ btour.UI=
 	        	console.log(results)
 	        	while(results[i]!=null)
 	            {
-				    var letters = '0123456789ABCDEF'.split('');
-				    var color = '#';
-				    for (var i = 0; i < 6; i++ ) {
-					        color += letters[Math.floor(Math.random() * 16)];
-					    }
-	//            	var randomcolor = 'rgb(' + (Math.floor((256-199)*Math.random()) + 100) + ',' + (Math.floor((256-199)*Math.random()) + 20) + ','+ (Math.floor((256-199)*Math.random()) + 150)+')';
-	            	$(".pocket").append('<div class ="passcard paper" onclick="location.href=\'/map?krlocation='+results[i].mapUrl+"&enlocation="+results[i].location+'\'"  style="background-color:'+color+'">'+results[i].location+'<a class="delete" style="color:#fff;"><h1>-</h1></a></div>');
+	            	var randomcolor = 'rgb(' + (Math.floor((256-199)*Math.random()) + 100) + ',' + (Math.floor((256-199)*Math.random()) + 20) + ','+ (Math.floor((256-199)*Math.random()) + 150)+')';
+	            	$(".pocket").append('<div class ="passcard paper" onclick="location.href=\'/map?krlocation='+results[i].mapUrl+"&enlocation="+results[i].location+'\'"  style="background-color:'+randomcolor+'">'+results[i].location+'<a class="delete" style="color:#fff;"><h1>-</h1></a></div>');
 	            	i++;}
 	            btour.UI.locationcard();
 	        }
