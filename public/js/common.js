@@ -149,9 +149,9 @@ btour.UI=
     						});
 
 	},
-	removediv:function()
+	clickspotcardfromsearch:function()
 	{
-
+		$(".spotcards").onclick(function(){alert("hello");});
 
 
 	}
