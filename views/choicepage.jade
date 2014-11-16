@@ -7,16 +7,18 @@ html
     link(href='//fonts.googleapis.com/css?family=Pacifico:400', rel='stylesheet', type='text/css')
     script(type='text/javascript', src='http://code.jquery.com/jquery-2.1.0.min.js')
     script(src='//code.jquery.com/ui/1.11.2/jquery-ui.js')
+    script(src='/js/common.js')  
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
   body
     .header
       h2.col-xs-12 Btour
     .choicecontainer.col-xs-12
     .search-box(onclick='')
-      span#searchicon.glyphicon.glyphicon-search(aria-hidden="true" onclick='location.href=\'/search/\'')
+      span#searchicon.glyphicon.glyphicon-search(aria-hidden="true")
       p Search
       p Spot Cards!
       p#or OR
     .recommend-box(onclick='location.href=\'/recommend/\'') Click
       p Recommend me
       p a Spot Cards!
+      a#userid(src= uin)

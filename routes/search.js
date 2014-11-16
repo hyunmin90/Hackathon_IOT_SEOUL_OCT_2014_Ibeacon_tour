@@ -1,12 +1,12 @@
 var express = require('express');
 var router = express.Router();
 
-router.get('/', function(req, res) {
-
-	res.render('searchpage', { title: 'searchpage'});
+router.get('/:uin', function(req, res) {
+	var uin=req.params.uin;
+	res.render('searchpage', { title: 'searchpage',uin: uin});
 });
 
-router.get('/location/:searchlocations', function(req, res) {
+router.get('/location/:searchlocations/', function(req, res) {
 	console.log(req.params.searchlocations);
 	var location = req.params.searchlocations;
 	console.log(location);
