@@ -151,7 +151,7 @@ btour.UI=
 	        							$(".spotcards").click(function(){
 												var location=$(this).attr("id");
 												$.ajax({
-	                								url:'/userdatas/'+uin+'/'+location+'/addspotcard/',
+	                								url:'http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/userdatas/'+uin+'/'+location+'/addspotcard/',
 										                type:'GET',
 										                success:function(result)
 										                {	
