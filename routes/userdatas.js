@@ -14,9 +14,11 @@ router.get('/:uin/cards', function(req, res) { //유저가 가지고있는 Locat
 
 router.get('/:uin/:locationame/addspotcard/', function(req, res) { //유저가 가지고있는 Location정보 
 	var location = req.params.locationame;
+	var uin = req.params.uin;
+
 	console.log(location);
-	
-	var sql ='select location from UserLocationCard where UIN=?';
+ 
+	var sql ="insert into userlocationcard (location_id,UIN,location) (select t1.id,'"+uin+"','"+location+"' from carddata t1 where t1.location='"+location+"')";
 	console.log(sql);
 	var query = dbcon.query(sql,[userid],function(err,rows){
 		console.log(rows);
