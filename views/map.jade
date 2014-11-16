@@ -15,16 +15,17 @@ html
         h2.col-xs-12 Btour
           .container.col-xs-12
   div(width='100%', height='30%')
-    h3.col-xs-12 #{location}
+    h3#enlocation.col-xs-12 #{enlocation}
+    h3#krlocation.col-xs-12.hide #{krlocation}
   div
-    iframe#mapIframe(width='100%', height='50%', scrolling='no', frameborder='0' marginheight='0', marginwidth='0' src='http://dna.daum.net/include/tools/routemap/map_view.php?width=360&height=360&latitude=37.718695611566346&longitude=128.83204123821244&contents=&zoom=4')
-    //iframe(width='100%', height='50%', frameborder='0', scrolling='no', marginheight='0', marginwidth='0', src='http://maps.google.com/maps?q='+location+'&output=embed&hl=en')
+    iframe#mapIframe(width='100%', height='65%', scrolling='no', frameborder='0' marginheight='0', marginwidth='0' src='http://dna.daum.net/include/tools/routemap/map_view.php?width=360&height=360&latitude=37.718695611566346&longitude=128.83204123821244&contents=&zoom=4')
+    //iframe(width='100%', height='50%', frameborder='0', scrolling='no', marginheight='0', marginwidth='0', src='http://maps.google.com/maps?q='+enlocation+'&output=embed&hl=en')
     div.mapBtnGrounp
-      button#mapBtn1.btn.btn-primary(type='button' style='margin-top: auto;') 구글 지도
-      button#mapBtn2.btn.btn-primary(type='button' style='margin-top: auto;') 다음 지도
-      button#mapBtn3.btn.btn-primary(type='button' style='margin-top: auto;') Bing 지도
-  div(width='100%', height='20%')
-    h2.col-xs-12 Detail route to your destination
+      //input#mapBtn1(width='50', height='20' type='image' style='margin-top: auto' src='./image/daum-logo.jpg')
+      button#mapBtn1.btn.btn-primary(type='button' style='margin-top: auto; float: right') google
+      button#mapBtn2.btn.btn-primary(type='button' style='margin-top: auto; float: right') Daum
+  div(width='100%', height='5%')
+    h2.col-xs-12
 
 
 
