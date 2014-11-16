@@ -13,7 +13,7 @@ html
     block content
           each item in array
             .list-container.col-xs-12#searcheditem
-              .list-item.col-xs-12.spotcards(id=item.location onclick='location.href=\'/userdatas/#{uin}/#{item.location}/addspotcard\'') 
+              .list-item.col-xs-12.spotcards(id=item.location) 
                 img(alt='', src=item.imageUrl)
                 p=item.location
         
