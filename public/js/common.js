@@ -29,12 +29,7 @@ btour.UI=
 	},
 	clickedevents:function()
 	{	
-		$(".spotcards").click(function(){
-			var location=$(this).attr("id");
-			var uin=$(".uin").attr("src");
-			var url = "/userdatas/"+uin+"/"+location+"/addspotcard"; 
-
-		});
+		
 
 		$(".add").click(function(){
 			var userid=$(".uin").attr("id");
@@ -148,7 +143,7 @@ btour.UI=
 	        							var i =0;
 	        							while(results[i]!=null)
 	        							{	
-	        								$("#searcheditem").append("<div id="results[i].location" class='list-item col-xs-12 spotcards'><img alt='shopping' src="+results[i].imageURL+"><p>"+results[i].location+"</p></div>");
+	        								$("#searcheditem").append("<div class='list-item col-xs-12 spotcards'><img alt='shopping' src="+results[i].imageURL+" href='/userdatas/"+uin+"/"+results[i].location+"/addspotcard/"+"'><p>"+results[i].location+"</p></div>");
 	        								i++;
 	        							}
 	        						}
