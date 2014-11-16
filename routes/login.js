@@ -74,20 +74,10 @@ passport.authenticate('facebook', {
 
 
 router.get('/login_success', function(req, res) {
+    console.log(res);   
       res.render('mainpage', { title: 'mainpage',posts:userimage,name:username,uin:uin });
 
 });
-
-
-
-
-/*router.get('/login_success', ensureAuthenticated, function(req, res){
-    console.log("login succedded!!!!");
-    res.render('error', { title: 'Express' });
-
-
-    //res.send(req.user);
-});*/
 
 
 
