@@ -50,11 +50,12 @@ btour.UI=
 		$(".recommend-box").click(function(){
 			var userid=$("#userid").attr("src");
 			var url = "/recommend/"+userid;    
+			console.log(url)
 			$(location).attr('href',url);
 		});
 
 		$(".mapBtnGrounp").click(function(e){
-
+ 
 			var btnName = $(e.target).attr('id');
 			var enlocation = $('#enlocation').text();
 			var krlocation = $('#krlocation').text();
