@@ -44,14 +44,8 @@ border: none;
 height: 64px;
 width: 311px;
 margin-top: 400px;
+margin-left: 9%;
 }
-#loginbutton.displayed{
-	display: block;
-	margin-right: auto;
-	margin-left: auto
-}
-
-
 
 button span {
   display: none;
