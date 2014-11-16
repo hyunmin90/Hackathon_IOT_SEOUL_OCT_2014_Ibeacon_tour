@@ -12,10 +12,13 @@ router.get('/getTourSpotInfo', function(req, res) {
 	var sql ='select seq, location from carddata where uuid=?';
 	var query = dbcon.query(sql,[uuid],function(err,rows){
 
-		console.log(err);
+		console.log("err : "+err);
+		console.dir(rows);
 		var SEQ = rows[0].seq;
 		var location_EN = rows[0].location;
-		console.log(err);
+
+		console.dir(SEQ);
+		console.dir(location_EN);
 
 		request({ method: 'GET',
 					url: 'http://openapi.jejutour.go.kr:8080/openapi/service/TourMapService/getTourMapView?_type=json&ServiceKey='+ServiceKey+'&SEQ='+SEQ,
@@ -24,13 +27,16 @@ router.get('/getTourSpotInfo', function(req, res) {
 
 					var tmName = value.response.body.items.item.tmName;
 					console.log(tmName);
-
+						//indexOf( SubStr1 )
 					var tmDescript = value.response.body.items.item.tmDescript;
+					tmDescript = tmDescript.substring(0,tmDescript.indexOf('\n'));
 
 					request({ method: 'GET',
 							  url: 'https://www.googleapis.com/language/translate/v2?key=AIzaSyANiZ1tyl7-Hj_OmvNrgg0J9k_dEUh52tU&source=ko&target=en&q='+encodeURIComponent(tmDescript),
 					}, function(err, response) {
+
 						var value = JSON.parse(response.body);
+
 						var tmDescript_EN = value.data.translations[0].translatedText;
 
 						request({ method: 'GET',
