@@ -112,21 +112,29 @@ btour.UI=
 	},
 
 	doneTyping:function(){
+		var uin=$(".uin").attr("id");
 		var searchterm= $("#search").val();
 		request = $.ajax({
         						url: "http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/search/location/"+searchterm, 	//Json데이터를 받아올 주소 
         						type: "get",
         						dataType:"json",
 	       							success: function(results)
-	        						{
+	        						{	
+	        							$(".card").remove();
 	        							var i =0;
 	        							while(results[i]!=null)
-	        							{
-	        								$("#searcheditem").append("<div onclick='location.href='/recommend/shopping'' class='list-item col-xs-12'><img alt='shopping' src="+results[i].imageURL+"><p href='/userdatas/"+results[i].location+"/addspotcard/"+"'>"+results[i].location+"</p></div>");
+	        							{	
+	        								$("#searcheditem").append("<div class='list-item col-xs-12 card'><img alt='shopping' src="+results[i].imageURL+" href='/userdatas/"+uin+"/"+results[i].location+"/addspotcard/"+"'><p>"+results[i].location+"</p></div>");
 	        								i++;
 	        							}
 	        						}
     						});
+
+	},
+	removediv:function()
+	{
+
+
 
 	}
   

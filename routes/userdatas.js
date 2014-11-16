@@ -12,7 +12,7 @@ router.get('/:uin/cards', function(req, res) { //유저가 가지고있는 Locat
 	});
 });
 
-router.get('/:locationame/addspotcard/:uin', function(req, res) { //유저가 가지고있는 Location정보 
+router.get('/:uin/:locationame/addspotcard/', function(req, res) { //유저가 가지고있는 Location정보 
 	var location = req.params.locationame;
 	console.log(location);
 	
