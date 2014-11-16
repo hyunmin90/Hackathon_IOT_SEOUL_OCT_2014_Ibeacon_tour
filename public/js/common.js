@@ -156,7 +156,7 @@ btour.UI=
 										                success:function(result)
 										                {	
 										                	alert("success");
-										                	
+										                	location.href="http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/login/login_success";
 									                    },
 									                    error:function()
 									                    {
@@ -164,9 +164,7 @@ btour.UI=
 									                    }
 
 										            });	
-													var url="http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/login/login_success";
-															$(location).attr('href',url);
-
+													location.href="http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/login/login_success";
 										});
 
 
