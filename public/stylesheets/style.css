@@ -41,11 +41,16 @@ background-image: url(https://fbcdn-dragon-a.akamaihd.net/hphotos-ak-xap1/t39.21
 background-repeat: no-repeat;
 background-position: 50% 50%;
 border: none;
-margin-top: 90%;
-margin-left: 12%;
 height: 64px;
 width: 311px;
 }
+#loginbutton.displayed{
+	display: block;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+
 
 button span {
   display: none;
