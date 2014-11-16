@@ -54,12 +54,29 @@ btour.UI=
 			var krlocation = $('#krlocation').text();
 
 			console.log(btnName);
-
+			//구글
 			if(btnName=='mapBtn1'){
 				$('#mapIframe').attr('src','http://maps.google.com/maps?q='+enlocation+'&output=embed&hl=en');
 			}
+			//다음
 			else if(btnName=='mapBtn2'){
-				$('#mapIframe').attr('src','http://dna.daum.net/include/tools/routemap/map_view.php?width=360&height=360&latitude=37.718695611566346&longitude=128.83204123821244&contents=&zoom=4');
+
+				//ajax로 경도 위도
+				$.ajax({
+	                url:'/map/getLatLng?location='+encodeURIComponent(krlocation),
+	                type:'GET',
+	                complete:function(result)
+	                {	
+	                	var jsonResult = JSON.parse(result.responseText);
+	                	console.log('/map/Iframe?Lat='+jsonResult.Lat+'&Lng='+jsonResult.Lng);
+                  		$('#mapIframe').attr('src','/map/Iframe?Lat='+jsonResult.Lat+'&Lng='+jsonResult.Lng);
+                    },
+	                error : function()
+	                {
+	                	alert("error");
+	                }
+	            });
+				//$('#mapIframe').attr('src','http://dna.daum.net/include/tools/routemap/map_view.php?width=360&height=360&latitude=37.718695611566346&longitude=128.83204123821244&contents=&zoom=4');
 			}
 		});
 	},
@@ -113,7 +130,7 @@ btour.UI=
 	},
 
 	doneTyping:function(){
-		var uin=$(".uin").attr("id");
+		var uin=$(".uin").attr("src");
 		var searchterm= $("#search").val();
 		request = $.ajax({
         						url: "http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/search/location/"+searchterm, 	//Json데이터를 받아올 주소 
@@ -152,6 +169,5 @@ $(document).ready(function(){
 	btour.UI.firesearch();
 	$('#search').donetyping(function(){
   	btour.UI.doneTyping();
-});
-
+	});
 });

@@ -8,8 +8,6 @@ html
     script(type='text/javascript', src='http://code.jquery.com/jquery-2.1.0.min.js')
     script(src='//code.jquery.com/ui/1.11.2/jquery-ui.js')
     script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js")
-  
-
     script(src='/js/common.js')
     script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js')
   body#searchpage
@@ -18,7 +16,7 @@ html
     ul.nav.navbar-default
       span#searchicon.glyphicon.glyphicon-search(aria-hidden="true")
       input#search.form-control(placeholder="search",type="text")
-      div.uin
+      div.uin(src= uin)
     .list-container.col-xs-12#searcheditem
       
 
