@@ -38,7 +38,6 @@ btour.UI=
 
 		});
 		$("#searchicon").click(function(){
-			alert("clicked");
 			var userid=$("#userid").attr("src");
 			var url = "/search/"+userid;    
 			$(location).attr('href',url);
