@@ -121,7 +121,7 @@ btour.UI=
 	        							var i =0;
 	        							while(results[i]!=null)
 	        							{
-	        								$("#searcheditem").append("<div onclick='location.href='/recommend/shopping'' class='list-item col-xs-12'><img alt='shopping' src="+results[i].imageURL+"><p href='/userdatas/"+results[i].location+"/addspotcard/"++"'>"+results[i].location+"</p></div>");
+	        								$("#searcheditem").append("<div onclick='location.href='/recommend/shopping'' class='list-item col-xs-12'><img alt='shopping' src="+results[i].imageURL+"><p href='/userdatas/"+results[i].location+"/addspotcard/"+"'>"+results[i].location+"</p></div>");
 	        								i++;
 	        							}
 	        						}
