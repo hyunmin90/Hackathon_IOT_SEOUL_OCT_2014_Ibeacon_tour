@@ -112,7 +112,7 @@ btour.UI=
 	},
 
 	doneTyping:function(){
-		var uin=$(".uin").attr("id");
+		var uin=$(".uin").attr("src");
 		var searchterm= $("#search").val();
 		request = $.ajax({
         						url: "http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/search/location/"+searchterm, 	//Json데이터를 받아올 주소 
