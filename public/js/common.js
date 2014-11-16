@@ -48,6 +48,13 @@ btour.UI=
 
 		});
 
+		$(".recommend-box").click(function(){
+			var userid=$("#userid").attr("src");
+			var url = "/recommend/"+userid;    
+			$(location).attr('href',url);
+
+		});
+
 
 
 		$(".mapBtnGrounp").click(function(e){

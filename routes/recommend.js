@@ -2,57 +2,65 @@ var express = require('express');
 var router = express.Router();
 var sql ='select id,seq,imageUrl,mapUrl,location from carddata where category=?';
 
-router.get('/', function(req, res) {
-  res.render('recommendpage', { title: 'recommend' });
+router.get('/:uin', function(req, res) {
+  var uin=req.params.uin;
+  res.render('recommendpage', { title: 'recommend' , uin:uin});
 });
 
-router.get('/historical', function(req, res) {
+router.get('/:uin/historical', function(req, res) {
+  var uin=req.params.uin;
   var historical = 'historical';
   var query = dbcon.query(sql,[historical],function(err,rows){
-	res.render('recommend_info', { title: 'mainpage', array : rows});
+	res.render('recommend_info', { title: 'mainpage', array : rows, uin:uin});
   });
 });
 
-router.get('/shopping', function(req, res) {
+router.get('/:uin/shopping', function(req, res) {
+  var uin=req.params.uin;
   var shopping = 'shopping';
   var query = dbcon.query(sql,[shopping],function(err,rows){
-	res.render('recommend_info', { title: 'mainpage', array : rows});
+	res.render('recommend_info', { title: 'mainpage', array : rows, uin:uin});
   });
 });
 
-router.get('/food', function(req, res) {
+router.get('/:uin/food', function(req, res) {
+  var uin=req.params.uin;
   var food = 'food';
   var query = dbcon.query(sql,[food],function(err,rows){
-    res.render('recommend_info', { title: 'mainpage', array : rows});
+    res.render('recommend_info', { title: 'mainpage', array : rows, uin:uin});
   });
 });
 
 
-router.get('/kwave', function(req, res) {
+router.get('/:uin/kwave', function(req, res) {
+  var uin=req.params.uin;
   var kwave = 'kwave';
   var query = dbcon.query(sql,[kwave],function(err,rows){
-	res.render('recommend_info', { title: 'mainpage', array : rows});
+	res.render('recommend_info', { title: 'mainpage', array : rows, uin:uin});
   });
 });
 
-router.get('/culture', function(req, res) {
+router.get('/:uin/culture', function(req, res) {
+  var uin=req.params.uin;
   var culture = 'culture';
   var query = dbcon.query(sql,[culture],function(err,rows){
-	res.render('recommend_info', { title: 'mainpage', array : rows});
+	res.render('recommend_info', { title: 'mainpage', array : rows, uin:uin});
   });
 });
 
-router.get('/sports', function(req, res) {
+router.get('/:uin/sports', function(req, res) {
+  var uin=req.params.uin;
   var sports = 'sports';
   var query = dbcon.query(sql,[sports],function(err,rows){
-	res.render('recommend_info', { title: 'mainpage', array : rows});
+	res.render('recommend_info', { title: 'mainpage', array : rows, uin:uin});
   });
 });
 
-router.get('/nature', function(req, res) {
+router.get('/:uin/nature', function(req, res) {
+  var uin=req.params.uin;
   var nature = 'nature';
   var query = dbcon.query(sql,[nature],function(err,rows){
-	res.render('recommend_info', { title: 'mainpage', array : rows});
+	res.render('recommend_info', { title: 'mainpage', array : rows, uin:uin});
   });
 });
 
