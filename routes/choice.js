@@ -5,9 +5,7 @@ var router = express.Router();
 router.get('/:uin', function(req, res) {
   var uin=req.params.uin;
   console.log(uin);
-  res.render('choicepage', { title: 'choice',uin: uin});
+  res.render('choicepage', { title: 'choice', uin: uin});
 });
 
 module.exports = router;
-
-

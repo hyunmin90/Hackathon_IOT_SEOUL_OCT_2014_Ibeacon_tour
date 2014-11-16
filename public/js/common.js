@@ -13,41 +13,46 @@ btour.UI=
         dataType:"json",
 	        success: function(results)
 	        {
+	        	console.log(results)
 	        	while(results[i]!=null)
 	            {
-	            	$(".pocket").append('<div class="passcard paper">'+results[i].location+'</div>');
+	            	var randomcolor = 'rgb(' + (Math.floor((256-199)*Math.random()) + 100) + ',' + (Math.floor((256-199)*Math.random()) + 20) + ','+ (Math.floor((256-199)*Math.random()) + 150)+')';
+	            	$(".pocket").append('<div class ="passcard paper" onclick="location.href=\'/map?krlocation='+results[i].mapUrl+"&enlocation="+results[i].location+'\'"  style="background-color:'+randomcolor+'">'+results[i].location+'<a class="delete" style="color:#fff;"><h1>-</h1></a></div>');
 	            	i++;}
 	            btour.UI.locationcard();
 	        }
-
-
-
-
     	});
 
 	},
 	clickedevents:function()
 	{	
+		$(".spotcards").click(function(){
+			alert("hello");
+
+		});
 
 		$(".add").click(function(){
 			var userid=$(".uin").attr("id");
 			var url = "/choice/"+userid;    
 			$(location).attr('href',url);
-
-
 		});
+
 		$("#searchicon").click(function(){
-			alert("clicked");
 			var userid=$("#userid").attr("src");
 			var url = "/search/"+userid;    
 			$(location).attr('href',url);
 
 		});
 
-
+		$(".recommend-box").click(function(){
+			var userid=$("#userid").attr("src");
+			var url = "/recommend/"+userid;    
+			console.log(url)
+			$(location).attr('href',url);
+		});
 
 		$(".mapBtnGrounp").click(function(e){
-
+ 
 			var btnName = $(e.target).attr('id');
 			var enlocation = $('#enlocation').text();
 			var krlocation = $('#krlocation').text();
@@ -141,17 +146,35 @@ btour.UI=
 	        							var i =0;
 	        							while(results[i]!=null)
 	        							{	
-	        								$("#searcheditem").append("<div class='list-item col-xs-12 spotcards'><img alt='shopping' src="+results[i].imageURL+" href='/userdatas/"+uin+"/"+results[i].location+"/addspotcard/"+"'><p>"+results[i].location+"</p></div>");
+	        								$("#searcheditem").append("<div class='list-item col-xs-12 spotcards' id='"+results[i].location+"'><img alt='shopping' src="+results[i].imageURL+" href='/userdatas/"+uin+"/"+results[i].location+"/addspotcard/"+"'><p>"+results[i].location+"</p></div>");
 	        								i++;
 	        							}
+	        							$(".spotcards").click(function(){
+												var location=$(this).attr("id");
+												$.ajax({
+	                								url:'http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/userdatas/'+uin+'/'+location+'/addspotcard/',
+										                type:'GET',
+										                success:function(result)
+										                {	
+										                	alert("success");
+										                	window.location.href="http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/login/login_success";
+									                    },
+									                    error:function()
+									                    {
+									                    		alert("your card has already been added");
+									                    		window.location.href="http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/login/login_success";
+									                    }
+
+										            });	
+													window.location.href="http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/login/login_success";
+										});
+
+
+
+
+
 	        						}
     						});
-
-	},
-	removediv:function()
-	{
-
-
 
 	}
   
