@@ -16,7 +16,7 @@ btour.UI=
 	        	console.log(results)
 	        	while(results[i]!=null)
 	            {
-	            	$(".pocket").append('<div class="passcard paper" onclick="location.href="/map?krlocation='+results[i].mapUrl+"&enlocation="+results[i].location+'">'+results[i].location+'</div>');
+	            	$(".pocket").append('<div class="passcard paper" onclick="location.href="/map?krlocation='+results[i].mapUrl+"&enlocation="+results[i].location+'">'+results[i].location+'<button class="delete" style="color:#fff;"><h1>-</h1></button></div>');
 	            	i++;}
 	            btour.UI.locationcard();
 	        }
