@@ -24,6 +24,6 @@ router.get('/:uin/:locationame/addspotcard/', function(req, res) { //유저가 �
         res.json(rows);
 	});
 
-	res.redirect('http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/login/login_success')
+	res.redirect('http://ec2-54-64-134-27.ap-northeast-1.compute.amazonaws.com:3000/login/login_success#_=_')
 });
 module.exports = router;
