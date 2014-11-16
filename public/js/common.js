@@ -16,7 +16,7 @@ btour.UI=
 	        	console.log(results)
 	        	while(results[i]!=null)
 	            {
-	            	var randomcolor = 'rgb(' + (Math.floor((256-199)*Math.random()) + 150) + ',' + (Math.floor((256-199)*Math.random()) + 100) + ','+ (Math.floor((256-199)*Math.random()) + 150)+')';
+	            	var randomcolor = 'rgb(' + (Math.floor((256-199)*Math.random()) + 100) + ',' + (Math.floor((256-199)*Math.random()) + 20) + ','+ (Math.floor((256-199)*Math.random()) + 150)+')';
 	            	$(".pocket").append('<div class ="passcard paper" onclick="location.href=\'/map?krlocation='+results[i].mapUrl+"&enlocation="+results[i].location+'\'"  style="background-color:'+randomcolor+'">'+results[i].location+'<a class="delete" style="color:#fff;"><h1>-</h1></a></div>');
 	            	i++;}
 	            btour.UI.locationcard();
