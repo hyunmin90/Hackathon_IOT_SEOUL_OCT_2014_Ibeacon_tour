@@ -17,45 +17,25 @@ router.get('/', function(req, res) {
 	});
 
 });
+//다음 지도 띄우기용
+router.get('/iframe', function(req, res) {
+	var Lat = req.param("Lat");
+	var Lng = req.param("Lng");
+	return res.render('mapIframe',{
+		Lat:Lat,
+		Lng:Lng
+	});
+});
 
 
+router.get('/getLatLng', function(req, res) {
 
-router.get('/getTourSpotInfo', function(req, res) {
-
-	var uuid = req.param("uuid").toUpperCase();
-	var sql ='select seq from uuidbridgeseq where uuid=?';
-	var query = dbcon.query(sql,[uuid],function(err,rows){
-
-		console.log(err);
-		var SEQ = rows[0].seq;
-		console.log(err);
-
-		/*request({ method: 'GET',
-					url: 'http://openapi.jejutour.go.kr:8080/openapi/service/TourMapService/getTourMapView?_type=json&ServiceKey='+ServiceKey+'&SEQ='+SEQ,
-				}, function(err, response) {
-					var value = JSON.parse(response.body);
-					var tmName = value.response.body.items.item.tmName;
-					console.log(tmName);
-
-					var tmDescript = value.response.body.items.item.tmDescript;
-		*/
-					var tmDescript = '안녕하세요';
-
-					request({ method: 'GET',
-							  url: 'https://www.googleapis.com/language/translate/v2?key=AIzaSyANiZ1tyl7-Hj_OmvNrgg0J9k_dEUh52tU&source=ko&target=en&q='+encodeURIComponent(tmDescript),
-					}, function(err, response) {
-						var value = JSON.parse(response.body);
-						res.json(value.data.translations[0].translatedText);
-						/*
-						request({ method: 'GET',
-								  url: 'https://apis.daum.net/local/v1/search/keyword?apikey=DAUM_LOCAL_DEMO_APIKEY&image=only&query='+encodeURIComponent(tmName),
-						}, function(err, response) {
-							var DaumValue = JSON.parse(response.body);
-							var imageUrl = DaumValue.channel.item[0].imageUrl;
-							res.json({tmName:tmName, tmDescript:tmDescript, imageUrl:imageUrl});
-						});*/
-					});
-				//});
+	var location = req.param("location");
+	request({ method: 'GET',
+			  url: 'https://apis.daum.net/local/v1/search/keyword?apikey=DAUM_LOCAL_DEMO_APIKEY&image=only&query='+encodeURIComponent(location),
+	}, function(err, response) {
+		var result = JSON.parse(response.body);
+		res.json({Lat:result.channel.item[0].latitude, Lng:result.channel.item[0].longitude});
 	});
 });
 

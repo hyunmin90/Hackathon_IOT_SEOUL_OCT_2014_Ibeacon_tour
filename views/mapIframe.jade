@@ -1,0 +1,15 @@
+html
+  head
+    meta(charset='utf-8')
+    script(src='/js/jquery-1.11.1.min.js')
+    script(type='text/javascript', src='//apis.daum.net/maps/maps3.js?apikey=70e534dd08b18fc3ec74267c75fb0ef4b783d138')
+    script(src='/js/mapIframe.js')
+    title
+    div#Lat(style='display: none;')= Lat
+    div#Lng(style='display: none;')= Lng
+  body(onload='btour.map.mapIframe();')
+    #map(style='width: 100%; height: 350px;')
+
+
+    
+
