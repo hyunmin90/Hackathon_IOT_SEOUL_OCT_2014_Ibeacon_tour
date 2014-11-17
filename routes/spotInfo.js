@@ -31,6 +31,8 @@ router.get('/getTourSpotInfo', function(req, res) {
 					var tmDescript = value.response.body.items.item.tmDescript;
 					tmDescript = tmDescript.substring(0,tmDescript.indexOf('\n'));
 
+					tmDescript = tmDescript.substring(0,200) + "...";
+
 					request({ method: 'GET',
 							  url: 'https://www.googleapis.com/language/translate/v2?key=AIzaSyANiZ1tyl7-Hj_OmvNrgg0J9k_dEUh52tU&source=ko&target=en&q='+encodeURIComponent(tmDescript),
 					}, function(err, response) {
