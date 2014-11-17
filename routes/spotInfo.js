@@ -4,7 +4,7 @@ var request = require('request');
 var url = require('url');
 
 var ServiceKey='kovsIkiq0a1AX7kkwPnbGwUYEgKwE%2FSssb5ySRZuweChWD61Tjvr33TMUvxAut6w%2Fqmf6GvMv1IPpZwIhXMIXQ%3D%3D';
-var apikey='';
+var apikey='70b03e504f23d854ad07fad4c02796d258e9b426';
 
 router.get('/getTourSpotInfo', function(req, res) {
 
@@ -40,7 +40,7 @@ router.get('/getTourSpotInfo', function(req, res) {
 						var tmDescript_EN = value.data.translations[0].translatedText;
 
 						request({ method: 'GET',
-								  url: 'https://apis.daum.net/local/v1/search/keyword?apikey=DAUM_LOCAL_DEMO_APIKEY&image=only&query='+encodeURIComponent(tmName),
+								  url: 'https://apis.daum.net/local/v1/search/keyword?apikey='+apikey+'&image=only&query='+encodeURIComponent(tmName),
 						}, function(err, response) {
 							var DaumValue = JSON.parse(response.body);
 							var imageUrl = DaumValue.channel.item[0].imageUrl;
