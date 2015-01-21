@@ -1,4 +1,4 @@
-Junit
+Btour, tourist app for replacing offline tourist guides. 
 =====
 Tour web+app designed to help tourist get information regarding tourist attraction through ibeacon technology
 (altbeacon library used for android)
