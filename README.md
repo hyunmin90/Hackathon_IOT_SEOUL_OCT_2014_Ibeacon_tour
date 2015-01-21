@@ -15,3 +15,6 @@ Android APP
 Web view used to display web app.
 Beacon library(altbeacon) used to detect specific beacon so that we could pop tourist attraction information, pulled from our server.
 (mobile branch)
+
+Refer to wiki for how this app works 
+https://github.com/hyunmin90/Junit/wiki
