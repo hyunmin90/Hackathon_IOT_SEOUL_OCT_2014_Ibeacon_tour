@@ -1,4 +1,4 @@
-Btour. 
+Btour
 =====
 
 <strong>tourist app for replacing offline tourist guides</strong>
